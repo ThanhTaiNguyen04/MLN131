@@ -907,6 +907,13 @@ function Learn() {
 
         <div class="space-y-6">
           <div class="bg-white border-2 border-green-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/IV/1.jpg" 
+                alt="Công nghiệp hóa, hiện đại hóa"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-green-700 mb-4">
               1. Đẩy mạnh công nghiệp hóa, hiện đại hóa gắn với kinh tế tri thức và bảo vệ môi trường
             </h4>
@@ -949,6 +956,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/IV/2.jpg" 
+                alt="Kinh tế thị trường định hướng XHCN"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-blue-700 mb-4">
               2. Phát triển kinh tế thị trường định hướng xã hội chủ nghĩa
             </h4>
@@ -1011,6 +1025,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-purple-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/IV/3.jpg" 
+                alt="Xây dựng văn hóa, con người"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-purple-700 mb-4">
               3. Xây dựng văn hóa, con người và nâng cao đời sống nhân dân
             </h4>
@@ -1048,6 +1069,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-red-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/IV/4.png" 
+                alt="Quốc phòng và an ninh"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-red-700 mb-4">
               4. Bảo đảm quốc phòng và an ninh
             </h4>
@@ -1086,6 +1114,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-teal-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/IV/5.jpeg" 
+                alt="Đường lối đối ngoại"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-teal-700 mb-4">
               5. Thực hiện đường lối đối ngoại độc lập, tự chủ, hòa bình, hợp tác và phát triển
             </h4>
@@ -1123,6 +1158,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-orange-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/IV/6.jpg" 
+                alt="Dân chủ XHCN và đại đoàn kết"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-orange-700 mb-4">
               6. Xây dựng nền dân chủ xã hội chủ nghĩa và đại đoàn kết toàn dân
             </h4>
@@ -1159,6 +1201,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-indigo-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/IV/7.jpg" 
+                alt="Nhà nước pháp quyền XHCN"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-indigo-700 mb-4">
               7. Xây dựng Nhà nước pháp quyền xã hội chủ nghĩa
             </h4>
@@ -1196,6 +1245,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-red-300 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/IV/8.jpg" 
+                alt="Xây dựng Đảng trong sạch, vững mạnh"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-red-700 mb-4">
               8. Xây dựng Đảng Cộng sản Việt Nam trong sạch, vững mạnh
             </h4>
