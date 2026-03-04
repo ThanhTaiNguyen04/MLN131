@@ -61,7 +61,7 @@ function Learn() {
           <div class="grid md:grid-cols-2 gap-4 mb-6">
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
               <img 
-                src="https://images.unsplash.com/photo-1555883005-5f3c51aca2d3?w=800&q=80" 
+                src="/pics/I/Ia.png" 
                 alt="Nông nghiệp truyền thống Việt Nam"
                 class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -71,7 +71,7 @@ function Learn() {
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
               <img 
-                src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" 
+                src="/pics/I/Screenshot 2026-03-04 204716.png" 
                 alt="Khắc phục hậu quả chiến tranh"
                 class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -131,6 +131,13 @@ function Learn() {
                   </p>
                 </div>
                 <div class="bg-gray-50 p-4 rounded-lg mt-4 border-l-4 border-gray-400">
+                  <div class="mb-3">
+                    <img 
+                      src="/pics/I/Mưa đỏ.png" 
+                      alt="Phim Mưa đỏ - Tái hiện chiến tranh Việt Nam"
+                      class="w-full rounded-lg shadow-md"
+                    />
+                  </div>
                   <p class="text-sm italic text-gray-600 mb-2">
                     <strong>Tư liệu điện ảnh:</strong> Bộ phim <em>Mưa đỏ</em> là một trong những tác phẩm tái hiện 
                     chân thực sự tàn khốc của chiến tranh, cho thấy mức độ tàn phá mà Việt Nam phải gánh chịu.
@@ -184,7 +191,7 @@ function Learn() {
           <div class="grid md:grid-cols-3 gap-4 mb-6">
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
               <img 
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" 
+                src="/pics/I/Screenshot 2026-03-04 204723.png" 
                 alt="Toàn cầu hóa"
                 class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -194,7 +201,7 @@ function Learn() {
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
               <img 
-                src="https://images.unsplash.com/photo-1535378620166-273708d44e4c?w=800&q=80" 
+                src="/pics/II/1.jpg" 
                 alt="Cách mạng 4.0"
                 class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -204,7 +211,7 @@ function Learn() {
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
               <img 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" 
+                src="/pics/II/2.jpg" 
                 alt="Hội nhập quốc tế"
                 class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -295,6 +302,13 @@ function Learn() {
       title: 'II. NHẬN THỨC CỦA ĐẢNG VỀ CON ĐƯỜNG "BỎ QUA CHẾ ĐỘ TƯ BẢN CHỦ NGHĨA"',
       content: `
         <div class="bg-gradient-to-r from-blue-50 to-cyan-50 border-l-4 border-blue-500 p-6 mb-8 rounded-lg">
+          <div class="mb-4">
+            <img 
+              src="/pics/II/3.jpg" 
+              alt="Con đường bỏ qua chế độ tư bản chủ nghĩa"
+              class="w-full rounded-lg shadow-lg"
+            />
+          </div>
           <p class="text-lg text-gray-700 leading-relaxed">
             "Bỏ qua" chế độ tư bản chủ nghĩa không phải là lựa chọn cảm tính, mà xuất phát từ 
             <strong>quy luật vận động tất yếu</strong> của cách mạng Việt Nam.
@@ -303,6 +317,13 @@ function Learn() {
 
         <div class="space-y-6">
           <div class="bg-white border-2 border-purple-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/II/1.jpg" 
+                alt="Con đường cách mạng tất yếu khách quan"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-purple-700 mb-4">
               1. Đây là con đường cách mạng tất yếu khách quan
             </h4>
@@ -336,6 +357,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/II/2.jpg" 
+                alt="Bỏ qua việc xác lập vị trí thống trị của QHSX tư bản chủ nghĩa"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-blue-700 mb-4">
               2. Bỏ qua việc xác lập vị trí thống trị của quan hệ sản xuất tư bản chủ nghĩa
             </h4>
@@ -369,6 +397,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-green-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/II/4.jpg" 
+                alt="Tiếp thu thành tựu của chủ nghĩa tư bản"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-green-700 mb-4">
               3. Tiếp thu và kế thừa thành tựu của chủ nghĩa tư bản
             </h4>
@@ -480,6 +515,13 @@ function Learn() {
 
         <div class="space-y-6">
           <div class="bg-white border-2 border-red-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/III/1.png" 
+                alt="Dân giàu, nước mạnh, dân chủ, công bằng, văn minh"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-red-700 mb-4">
               1. Dân giàu, nước mạnh, dân chủ, công bằng, văn minh
             </h4>
@@ -527,6 +569,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/III/2.png" 
+                alt="Do nhân dân làm chủ"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-blue-700 mb-4">
               2. Do nhân dân làm chủ
             </h4>
@@ -564,6 +613,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-purple-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/III/3.png" 
+                alt="Nền kinh tế phát triển cao"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-purple-700 mb-4">
               3. Nền kinh tế phát triển cao, lực lượng sản xuất hiện đại, quan hệ sản xuất phù hợp
             </h4>
@@ -600,6 +656,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-orange-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/III/4.png" 
+                alt="Nền văn hóa tiên tiến"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-orange-700 mb-4">
               4. Nền văn hóa tiên tiến, đậm đà bản sắc dân tộc
             </h4>
@@ -651,6 +714,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-teal-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/III/5.png" 
+                alt="Con người có cuộc sống ấm no, tự do, hạnh phúc"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-teal-700 mb-4">
               5. Con người có cuộc sống ấm no, tự do, hạnh phúc, phát triển toàn diện
             </h4>
@@ -682,6 +752,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-indigo-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/III/6.png" 
+                alt="Các dân tộc bình đẳng, đoàn kết"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-indigo-700 mb-4">
               6. Các dân tộc bình đẳng, đoàn kết, tôn trọng và giúp nhau cùng phát triển
             </h4>
@@ -719,6 +796,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-red-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/III/7.png" 
+                alt="Nhà nước pháp quyền xã hội chủ nghĩa"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-red-700 mb-4">
               7. Nhà nước pháp quyền xã hội chủ nghĩa của nhân dân, do nhân dân, vì nhân dân, do Đảng Cộng sản lãnh đạo
             </h4>
@@ -760,6 +844,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/III/8.png" 
+                alt="Quan hệ hữu nghị và hợp tác quốc tế"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-blue-700 mb-4">
               8. Quan hệ hữu nghị và hợp tác với các nước trên thế giới
             </h4>
