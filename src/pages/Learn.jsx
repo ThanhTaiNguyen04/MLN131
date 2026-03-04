@@ -1,7 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Learn() {
   const [activeSection, setActiveSection] = useState(0);
+  const [completedSections, setCompletedSections] = useState([]);
+  const [showCompletionModal, setShowCompletionModal] = useState(false);
+
+  // Load progress from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem('mln131-progress');
+    if (saved) {
+      setCompletedSections(JSON.parse(saved));
+    }
+  }, []);
+
+  // Save progress to localStorage
+  useEffect(() => {
+    if (completedSections.length > 0) {
+      localStorage.setItem('mln131-progress', JSON.stringify(completedSections));
+      
+      // Check if all sections completed
+      if (completedSections.length === 4 && !showCompletionModal) {
+        setTimeout(() => setShowCompletionModal(true), 500);
+      }
+    }
+  }, [completedSections]);
+
+  const markAsCompleted = (sectionId) => {
+    if (!completedSections.includes(sectionId)) {
+      setCompletedSections([...completedSections, sectionId]);
+    }
+  };
+
+  const resetProgress = () => {
+    setCompletedSections([]);
+    localStorage.removeItem('mln131-progress');
+    setShowCompletionModal(false);
+  };
 
   const sections = [
     {
@@ -1231,16 +1265,64 @@ function Learn() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent">
-            Quá Độ Lên Chủ Nghĩa Xã Hội Ở Việt Nam
-          </h1>
-          <p className="text-xl text-gray-600">
-            Tài liệu tham khảo môn Chủ nghĩa Mác – Lênin (MLN131)
-          </p>
+    <>
+      {/* Completion Modal */}
+      {showCompletionModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fadeIn">
+          <div className="bg-white rounded-2xl p-10 max-w-md mx-4 shadow-2xl transform animate-scaleIn">
+            <div className="text-center">
+              <div className="text-6xl mb-4 animate-bounce">🎉</div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Xuất sắc!
+              </h2>
+              <p className="text-lg text-gray-600 mb-4">
+                Bạn đã hoàn thành <strong className="text-blue-600">toàn bộ bài học</strong>!
+              </p>
+              <div className="flex justify-center gap-2 text-4xl mb-6">
+                <span className="animate-bounce" style={{animationDelay: '0s'}}>⭐</span>
+                <span className="animate-bounce" style={{animationDelay: '0.1s'}}>⭐</span>
+                <span className="animate-bounce" style={{animationDelay: '0.2s'}}>⭐</span>
+                <span className="animate-bounce" style={{animationDelay: '0.3s'}}>⭐</span>
+              </div>
+              <p className="text-gray-600 mb-6">
+                Bạn đã thu thập đủ <strong>4/4 sao</strong>!<br/>
+                Hãy thử sức với <strong>Quiz Game</strong> để kiểm tra kiến thức nhé!
+              </p>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setShowCompletionModal(false)}
+                  className="flex-1 px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-all"
+                >
+                  Đóng
+                </button>
+                <button
+                  onClick={() => window.location.href = '/quiz'}
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all"
+                >
+                  Làm Quiz →
+                </button>
+              </div>
+              <button
+                onClick={resetProgress}
+                className="mt-4 text-sm text-gray-500 hover:text-red-600 transition-colors"
+              >
+                Reset tiến độ
+              </button>
+            </div>
+          </div>
         </div>
+      )}
+
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+        <div className="container mx-auto px-4 py-12">
+          <div className="text-center mb-12">
+            <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent">
+              Quá Độ Lên Chủ Nghĩa Xã Hội Ở Việt Nam
+            </h1>
+            <p className="text-xl text-gray-600">
+              Tài liệu tham khảo môn Chủ nghĩa Mác – Lênin (MLN131)
+            </p>
+          </div>
 
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-1">
@@ -1248,29 +1330,42 @@ function Learn() {
               <h2 className="text-2xl font-bold mb-6 text-blue-600">Nội Dung</h2>
               
               <nav className="space-y-3">
-                {sections.map((section, index) => (
-                  <button
-                    key={section.id}
-                    onClick={() => setActiveSection(index)}
-                    className={`w-full text-left px-6 py-4 rounded-lg font-semibold text-sm transition-all duration-300 ${
-                      activeSection === index
-                        ? 'bg-blue-600 text-white shadow-lg transform scale-105'
-                        : 'bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700'
-                    }`}
-                  >
-                    {section.title}
-                  </button>
-                ))}
+                {sections.map((section, index) => {
+                  const isCompleted = completedSections.includes(section.id);
+                  return (
+                    <button
+                      key={section.id}
+                      onClick={() => setActiveSection(index)}
+                      className={`w-full text-left px-6 py-4 rounded-lg font-semibold text-sm transition-all duration-300 relative ${
+                        activeSection === index
+                          ? 'bg-blue-600 text-white shadow-lg transform scale-105'
+                          : 'bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="flex-1">{section.title}</span>
+                        {isCompleted && (
+                          <span className="ml-2 text-2xl animate-bounce">⭐</span>
+                        )}
+                      </div>
+                    </button>
+                  );
+                })}
               </nav>
               
               <div className="mt-8">
-                <p className="text-sm text-gray-600 mb-2">
-                  Tiến Độ: {activeSection + 1}/{sections.length}
-                </p>
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-sm text-gray-600">
+                    Tiến Độ
+                  </p>
+                  <p className="text-sm font-bold text-blue-600">
+                    {completedSections.length}/4 ⭐
+                  </p>
+                </div>
                 <div className="w-full bg-gray-200 rounded-full h-3">
                   <div 
                     className="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full transition-all duration-500"
-                    style={{ width: `${((activeSection + 1) / sections.length) * 100}%` }}
+                    style={{ width: `${(completedSections.length / sections.length) * 100}%` }}
                   ></div>
                 </div>
               </div>
@@ -1300,6 +1395,21 @@ function Learn() {
                 >
                   ← Trước
                 </button>
+                
+                {!completedSections.includes(sections[activeSection].id) ? (
+                  <button
+                    onClick={() => markAsCompleted(sections[activeSection].id)}
+                    className="px-8 py-4 rounded-lg font-bold text-lg bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 transform hover:scale-105 shadow-lg transition-all duration-300"
+                  >
+                    ✓ Hoàn thành
+                  </button>
+                ) : (
+                  <div className="px-8 py-4 rounded-lg font-bold text-lg bg-gradient-to-r from-yellow-400 to-orange-500 text-white shadow-lg flex items-center gap-2">
+                    <span className="animate-bounce">⭐</span>
+                    <span>Đã hoàn thành</span>
+                  </div>
+                )}
+                
                 <button
                   onClick={() => setActiveSection(Math.min(sections.length - 1, activeSection + 1))}
                   disabled={activeSection === sections.length - 1}
@@ -1315,8 +1425,9 @@ function Learn() {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
