@@ -191,7 +191,7 @@ function Learn() {
           <div class="grid md:grid-cols-3 gap-4 mb-6">
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
               <img 
-                src="/pics/I/Screenshot 2026-03-04 204723.png" 
+                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800&q=80" 
                 alt="Toàn cầu hóa"
                 class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -201,7 +201,7 @@ function Learn() {
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
               <img 
-                src="/pics/II/1.jpg" 
+                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80" 
                 alt="Cách mạng 4.0"
                 class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -211,7 +211,7 @@ function Learn() {
             </div>
             <div class="relative overflow-hidden rounded-lg shadow-lg group">
               <img 
-                src="/pics/II/2.jpg" 
+                src="https://images.unsplash.com/photo-1569098644584-210bcd375b59?w=800&q=80" 
                 alt="Hội nhập quốc tế"
                 class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
               />
