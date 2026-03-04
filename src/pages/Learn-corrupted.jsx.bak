@@ -1,0 +1,2040 @@
+﻿import React, { useState } from 'react';
+
+function Learn() {
+  const [activeSection, setActiveSection] = useState(0);
+
+  const sections = [
+    {
+      id: 1,
+      title: 'Điểm Xuất Phát',
+      content: `
+        <h3 class="text-2xl font-bold mb-6 text-red-600">Điểm Xuất Phát: Thấp, Phức Tạp vNhiều HLụy Lịch Sử</h3>
+        
+        <div class="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-orange-500 p-6 mb-6 rounded-lg">
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Việt Nam bước vào thời kquđtmột <strong>nền kinh tthuộc địa, nửa phong kiến</strong> với 
+            những đặc điểm mang tính quyết định đến toàn bqutrình xây dựng chnghĩa xhội.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <h4 class="text-xl font-bold text-blue-700 mb-4 flex items-center">
+              1. Xuất Phát TXHội Thuộc Địa, Nửa Phong Kiến
+            </h4>
+            <div class="space-y-3 text-gray-700">
+              <p>Việt Nam bước vào thời kquđtừ:</p>
+              <ul class="space-y-2 ml-6">
+                <li>Nền kinh tmang đặc trưng <strong>nông nghiệp lạc hậu</strong>, sản xuất nhlchyếu</li>
+                <li><strong>Lực lượng sản xuất còn thấp kém</strong>, csvật chất kthuật nghèo nàn</li>
+                <li>Giai cấp công nhân còn <strong>non yếu</strong>, tsản dân tộc chưa phát triển đmạnh</li>
+              </ul>
+              <div class="bg-blue-50 p-4 rounded-lg mt-4">
+                <p class="font-semibold text-blue-800">Hquả:</p>
+                <p class="text-gray-700 mt-2">
+                  Thời kquđtất yếu phải <strong>kéo dài</strong>, vViệt Nam không c<em>"bphóng công nghiệp tbản"</em> nhcác nước phương Tây từng trải qua.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-red-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <h4 class="text-xl font-bold text-red-700 mb-4 flex items-center">
+              2. Hậu QuNặng NCủa Chiến Tranh
+            </h4>
+            <div class="space-y-3 text-gray-700">
+              <p>Hàng chục năm chiến tranh liên tiếp đlại hlụy sâu sắc:</p>
+              <ul class="space-y-2 ml-6">
+                <li>Htầng kinh tb<strong>tàn phá</strong></li>
+                <li>Nguồn nhân lực <strong>tổn thất lớn</strong></li>
+                <li>Môi trường xhội chịu nhiều <strong>biến động</strong></li>
+              </ul>
+              <div class="bg-red-50 border-l-4 border-red-400 p-4 mt-4">
+                <p class="font-semibold text-red-800 mb-2">Nhiệm vkép:</p>
+                <p class="text-gray-700">
+                  Không chl<strong>xây dựng</strong> mcòn phải đồng thời 
+                  <strong>khôi phục vhàn gắn</strong> những tổn thất do chiến tranh đlại.
+                </p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg mt-4">
+                <p class="font-semibold text-gray-800 mb-2 flex items-center">
+                  Tliệu điện ảnh:
+                </p>
+                <p class="text-sm text-gray-600">
+                  <strong>Mưa đỏ</strong> - Tác phẩm điện ảnh tái hiện chân thực stàn khốc của chiến tranh, 
+                  cho thấy mức đtàn phmViệt Nam phải gánh chịu trước khi bước vào thời kxây dựng đất nước.
+                </p>
+              </div>
+              <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-lg mt-3">
+                <p class="font-semibold text-gray-800 mb-2 flex items-center">
+                  Tliệu tham khảo:
+                </p>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li><a href="http://baotangchungtichchientranh.vn" target="_blank" class="text-blue-600 hover:underline">Bảo tàng Chứng tích Chiến tranh</a></li>
+                  <li><a href="http://baotanglichsuquansu.vn" target="_blank" class="text-blue-600 hover:underline">Bảo tàng Lịch sQuân sViệt Nam</a></li>
+                  <li><a href="http://www.baotanglichsutphcm.com.vn" target="_blank" class="text-blue-600 hover:underline">Bảo tàng Lịch sTP.HCM</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-purple-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <h4 class="text-xl font-bold text-purple-700 mb-4 flex items-center">
+              3. Tàn DThực Dân Phong Kiến vSChống Ph</h4>
+            <div class="space-y-3 text-gray-700">
+              <p>Những di sản tiêu cực còn tồn tại dai dẳng:</p>
+              <ul class="space-y-2 ml-6">
+                <li>Tduy sản xuất nhv<strong>tâm ltiểu nông</strong></li>
+                <li>Tàn dvvăn hóa, phương thức quản lcũ</li>
+                <li>Thlực thđịch không ngừng <strong>tìm cách can thiệp, phhoại</strong></li>
+              </ul>
+              <div class="bg-purple-50 p-4 rounded-lg mt-4">
+                <p class="font-semibold text-purple-800">Yêu cầu đặt ra:</p>
+                <p class="text-gray-700 mt-2">
+                  Qutrình quđmang tính <strong>vừa xây dựng, vừa đấu tranh</strong> bảo vthành qucách mạng.
+                </p>
+              </div>
+              <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-4 rounded-lg mt-4">
+                <p class="font-semibold text-gray-800 mb-3 flex items-center">
+                  Tliệu văn học:
+                </p>
+                <div class="space-y-3 text-sm">
+                  <div class="bg-white p-3 rounded border-l-4 border-yellow-500">
+                    <p class="font-bold text-gray-800">Tắt đèn (NgTất Tố)</p>
+                    <p class="text-gray-600 mt-1">Phphán sưu cao thunặng, bi kịch người nông dân dưới chđthực dân phong kiến</p>
+                  </div>
+                  <div class="bg-white p-3 rounded border-l-4 border-orange-500">
+                    <p class="font-bold text-gray-800">ChPhèo (Nam Cao)</p>
+                    <p class="text-gray-600 mt-1">Khắc họa stha hóa con người trong xhội nửa phong kiến</p>
+                  </div>
+                  <div class="bg-white p-3 rounded border-l-4 border-red-500">
+                    <p class="font-bold text-gray-800">Sphận con người (Nam Cao)</p>
+                    <p class="text-gray-600 mt-1">Phản ánh thất bại của người trthức trước ttưởng cục blàng xvtàn dphong kiến</p>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg mt-3">
+                <p class="font-semibold text-gray-800 mb-2 flex items-center">
+                  Tliệu điện ảnh:
+                </p>
+                <p class="text-sm text-gray-600">
+                  <strong>Đất phương Nam</strong>, <strong>BthTỉnh ủy</strong>, <strong>Miền đất phúc</strong> 
+                  - Tái hiện bức tranh xhội nông thôn Việt Nam với tàn dtduy tiểu nông, mâu thuẫn giai cấp 
+                  vqutrình cải tạo quan hsản xuất.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+    },
+    {
+      id: 2,
+      title: 'Bối Cảnh Thời Đại',
+      content: `
+        <h3 class="text-2xl font-bold mb-6 text-red-600">Bối Cảnh Thời Đại: Thuận Lợi vKhKhăn Đan Xen</h3>
+
+        <div class="bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-300 rounded-xl p-6 mb-6 shadow-lg">
+          <h4 class="text-2xl font-bold text-green-700 mb-5 flex items-center">
+            <div class="space-y-4">
+            <div class="bg-white p-4 rounded-lg shadow">
+              <p class="text-gray-700 mb-4">
+                Cuộc <strong>cách mạng khoa học công nghệ</strong> hiện đại mra chội rút ngắn qutrình công nghiệp hóa. 
+                <strong>Toàn cầu hóa</strong> giúp mrộng thtrường, thu hút vốn vtiếp cận tri thức nhân loại.
+              </p>
+              <div class="bg-green-50 p-3 rounded">
+                <p class="font-semibold text-green-800">Chiến lược "đi tắt, đón đầu"</p>
+                <p class="text-sm text-gray-600 mt-1">
+                  Không lặp lại con đường phát triển tuần tkéo dài của các nước phương Tây
+                </p>
+              </div>
+            </div>
+
+            <h5 class="text-lg font-bold text-gray-800 mt-6 mb-3">Minh chứng thực tiễn tiêu biểu:</h5>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg hover:shadow-md transition-shadow">
+                <h6 class="font-bold text-blue-700 mb-2 flex items-center">
+                  Viễn thông vInternet
+                </h6>
+                <ul class="text-sm text-gray-700 space-y-1">
+                  <li>Không qua giai đoạn điện thoại cđịnh</li>
+                  <li>Chuyển thẳng sang di động vinternet băng rộng</li>
+                  <li>Viettel - nhcung cấp viễn thông lớn nhất khu vực</li>
+                  <li>Phsóng 4G toàn quốc, thnghiệm 5G sớm</li>
+                </ul>
+              </div>
+
+              <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-r-lg hover:shadow-md transition-shadow">
+                <h6 class="font-bold text-purple-700 mb-2 flex items-center">
+                  Kinh ts& Thanh toán điện t</h6>
+                <ul class="text-sm text-gray-700 space-y-1">
+                  <li>Bqua giai đoạn thtín dụng truyền thống</li>
+                  <li>Bước thẳng vào thời đại QR code & vđiện tử</li>
+                  <li>Thương mại điện ttăng trưởng 2 chsố/năm</li>
+                  <li>Chuyển đổi squốc gia mạnh mẽ</li>
+                </ul>
+              </div>
+
+              <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-lg hover:shadow-md transition-shadow">
+                <h6 class="font-bold text-orange-700 mb-2 flex items-center">
+                  Công nghiệp điện t& FDI công nghcao
+                </h6>
+                <ul class="text-sm text-gray-700 space-y-1">
+                  <li>Không tphát triển tcông nghiệp nặng ckhí</li>
+                  <li>Thu hút Samsung, Intel đầu tư</li>
+                  <li>Điện thoại & linh kiện - xuất khẩu lớn nhất</li>
+                  <li>Mắt xích quan trọng chuỗi cung ứng toàn cầu</li>
+                </ul>
+              </div>
+
+              <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg hover:shadow-md transition-shadow">
+                <h6 class="font-bold text-green-700 mb-2 flex items-center">
+                  Nông nghiệp công nghcao
+                </h6>
+                <ul class="text-sm text-gray-700 space-y-1">
+                  <li>Ứng dụng công nghsinh học & tđộng hóa</li>
+                  <li>Xuất khẩu gạo, cphhàng đầu thgiới</li>
+                  <li>Thủy sản chất lượng cao</li>
+                  <li>Không qua cgiới hóa chậm chạp kéo dài</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-4 rounded-lg mt-4">
+              <h6 class="font-bold text-indigo-700 mb-2 flex items-center">
+                Hội nhập kinh tquốc t</h6>
+              <ul class="text-sm text-gray-700 space-y-1">
+                <li>Gia nhập WTO (2007)</li>
+                <li>Tham gia CPTPP</li>
+                <li>Kkết EVFTA (Việt Nam EU)</li>
+                <li>Mrộng thtrường xuất khẩu, thu hút FDI chất lượng cao</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-300 rounded-xl p-6 shadow-lg">
+          <h4 class="text-2xl font-bold text-red-700 mb-5 flex items-center">
+            2. Những KhKhăn vThách Thức
+          </h4>
+
+          <div class="space-y-4">
+            <div class="bg-white border-l-4 border-red-500 p-5 rounded-r-lg shadow hover:shadow-lg transition-shadow">
+              <h5 class="font-bold text-red-700 mb-3 text-lg">Cạnh tranh quốc tgay gắt</h5>
+              <ul class="space-y-2 text-gray-700">
+                <li>Sau WTO: DN Việt Nam phải cạnh tranh trực tiếp với tập đoàn đa quốc gia</li>
+                <li>Nhiều DN vừa vnhgặp khkhăn nghiêm trọng</li>
+                <li>Nông sản báp dụng tiêu chuẩn kthuật khắt khe (EU)</li>
+                <li>Kiện chống bán phgiá: thép, thủy sản, gỗ</li>
+              </ul>
+            </div>
+
+            <div class="bg-white border-l-4 border-orange-500 p-5 rounded-r-lg shadow hover:shadow-lg transition-shadow">
+              <h5 class="font-bold text-orange-700 mb-3 text-lg">Quan hquốc tvừa hợp tác, vừa đấu tranh</h5>
+              <ul class="space-y-2 text-gray-700">
+                <li>Quan hkinh tsâu rộng với Hoa Kỳ, Trung Quốc, Nhật Bản</li>
+                <li>Đối mặt tranh chấp chquyền Biển Đông</li>
+                <li>Áp lực địa chính trtcạnh tranh cường quốc</li>
+                <li>Duy trchính sách đối ngoại <strong>cân bằng, linh hoạt</strong></li>
+              </ul>
+            </div>
+
+            <div class="bg-white border-l-4 border-purple-500 p-5 rounded-r-lg shadow hover:shadow-lg transition-shadow">
+              <h5 class="font-bold text-purple-700 mb-3 text-lg">Chống phvchính trị, kinh tvttưởng</h5>
+              <ul class="space-y-2 text-gray-700">
+                <li>Chiến dịch thông tin sai lệch trên mạng xhội</li>
+                <li>Kêu gọi "đa nguyên, đa đảng" tnước ngoài</li>
+                <li>Biến động chuỗi cung ứng toàn cầu sau COVID-19</li>
+                <li>Xung đột Nga Ukraine ảnh hưởng năng lượng, lạm phát</li>
+              </ul>
+            </div>
+
+            <div class="bg-yellow-50 border-2 border-yellow-400 p-5 rounded-lg">
+              <h5 class="font-bold text-yellow-800 mb-3 text-lg flex items-center">
+                Xu thphát triển không tuyến tính
+              </h5>
+              <p class="text-gray-700 leading-relaxed">
+                Nhiều nước XHCN cải cách theo hướng thtrường, trong khi nhiều nước tbản tăng cường vai trnhnước 
+                (đặc biệt sau khủng hoảng 2008). <strong>Không ccon đường duy nhất, tuyến tính</strong> cho tất ccác quốc gia.
+              </p>
+            </div>
+          </div>
+        </div>
+      `
+    },
+    {
+      id: 3,
+      title: 'Nghĩa "BQua TBCN"',
+      content: `
+        <h3 class="text-2xl font-bold mb-6 text-red-600">Nghĩa Của Việc "BQua ChĐTBản ChNghĩa"</h3>
+
+        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl mb-6 border-l-4 border-blue-500">
+          <p class="text-lg text-gray-700 leading-relaxed">
+            <strong>"Bqua"</strong> chđtbản chnghĩa lmột quyết định chiến lược cnghĩa sâu sắc, 
+            thhiện qua 4 khía cạnh cbản:
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <!-- 1. Con đường tất yếu khách quan -->
+          <div class="bg-white border-2 border-green-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <h4 class="text-xl font-bold text-green-700 mb-4 flex items-center">
+              <span class="bg-green-100 rounded-full px-4 py-2 mr-3 text-2xl">1</span>
+              Con Đường Cách Mạng Tất Yếu Khách Quan
+            </h4>
+            
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              "Bqua" chđtbản chnghĩa <strong>không phải lựa chọn cảm tính</strong>, 
+              mxuất phát t<strong>quy luật vận động tất yếu</strong> của cách mạng Việt Nam.
+            </p>
+
+            <div class="space-y-4">
+              <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                <h5 class="font-bold text-green-800 mb-2">Thnhất: Lãnh đạo của giai cấp công nhân</h5>
+                <p class="text-gray-700 text-sm leading-relaxed">
+                  Việt Nam giành độc lập dưới slãnh đạo của <strong>giai cấp công nhân</strong> thông qua Đảng Cộng sản 
+                  không phải giai cấp tsản. Tkhi thành lập năm 1930, Đảng đxác định: hoàn thành cách mạng dân tộc 
+                  dân chđ<strong>tiến lên chnghĩa xhội</strong>.
+                </p>
+                <div class="mt-3 bg-white p-3 rounded italic text-sm text-gray-600">
+                  HChMinh khẳng định: <strong>"Độc lập dân tộc phải gắn liền với chnghĩa xhội"</strong> 
+                  đkhông phải khúc rngẫu hứng, mlstiếp nối logic của toàn btiến trình cách mạng.
+                </div>
+              </div>
+
+              <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+                <h5 class="font-bold text-blue-800 mb-2">Thhai: Không cnền tảng tbản vững mạnh</h5>
+                <p class="text-gray-700 text-sm leading-relaxed">
+                  Trước năm 1945, <strong>giai cấp tsản dân tộc còn yếu ớt</strong>, lthuộc vào thực dân Pháp, 
+                  không đsức lãnh đạo xây dựng một chđtbản theo mhình phương Tây. 
+                  Con đường tbản chnghĩa <strong>không ccskinh txhội vững chắc</strong> đhình thành.
+                </p>
+              </div>
+
+              <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400">
+                <h5 class="font-bold text-purple-800 mb-2">Thba: Quy luật cách mạng xhội chnghĩa</h5>
+                <p class="text-gray-700 text-sm leading-relaxed">
+                  Khi giai cấp công nhân nắm quyền lãnh đạo vmục tiêu <strong>giải phóng dân tộc gắn với giải phóng giai cấp</strong>, 
+                  cách mạng tất yếu vận động theo định hướng xhội chnghĩa. Đây lquy luật m<strong>lluận Mác Lênin</strong> đchra vthực tiễn Việt Nam đxác nhận qua Cương lĩnh 1991 v2011.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Bqua vtrthống tr-->
+          <div class="bg-white border-2 border-orange-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <h4 class="text-xl font-bold text-orange-700 mb-4 flex items-center">
+              <span class="bg-orange-100 rounded-full px-4 py-2 mr-3 text-2xl">2</span>
+              BQua VTrThống TrCủa Quan HSản Xuất TBCN
+            </h4>
+
+            <div class="bg-orange-50 p-4 rounded-lg mb-4">
+              <p class="font-semibold text-orange-800 mb-2">Nội dung cốt lõi:</p>
+              <p class="text-gray-700 leading-relaxed">
+                Không phải <strong>xóa bhoàn toàn</strong> các yếu tkinh tthtrường, ml<strong>không đquan hsản xuất tbản chnghĩa trthành nền tảng chi phối toàn xhội</strong>.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-white border-l-4 border-indigo-500 p-4 rounded-r-lg shadow">
+                <h5 class="font-bold text-indigo-700 mb-2 flex items-center">
+                  Vshữu
+                </h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  <strong>Hiến pháp 2013</strong> quy định:
+                </p>
+                <ul class="text-sm text-gray-600 space-y-1 ml-4">
+                  <li><strong>Điều 53:</strong> Đất đai thuộc <strong>shữu toàn dân</strong> do Nhnước đại diện quản lý</li>
+                  <li><strong>Điều 51:</strong> Kinh tnhnước gi<strong>vai trchđạo</strong> trong nền kinh tnhiều thành phần</li>
+                  <li>Quan hshữu tnhân ctồn tại nhưng <strong>không chi phối toàn bnền kinh tế</strong></li>
+                </ul>
+              </div>
+
+              <div class="bg-white border-l-4 border-red-500 p-4 rounded-r-lg shadow">
+                <h5 class="font-bold text-red-700 mb-2 flex items-center">
+                  Vbản chất nhnước
+                </h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  <strong>Hiến pháp 2013, Điều 4</strong> xác định:
+                </p>
+                <div class="bg-red-50 p-3 rounded mt-2">
+                  <p class="text-sm text-gray-700">
+                    Việt Nam l<strong>Nhnước pháp quyền xhội chnghĩa</strong> của nhân dân, do nhân dân, vnhân dân, 
+                    đặt dưới slãnh đạo của <strong>Đảng Cộng sản</strong>. Httưởng chính thức l<strong>chnghĩa Mác Lênin vttưởng HChMinh</strong> khác vbản chất so với mhình nhnước tsản.
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-white border-l-4 border-teal-500 p-4 rounded-r-lg shadow">
+                <h5 class="font-bold text-teal-700 mb-2 flex items-center">
+                  Trong thực t</h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  Các lĩnh vực <strong>then chốt</strong> vẫn do Nhnước kiểm soát:
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 mt-2">
+                  <div class="bg-teal-50 p-2 rounded text-center text-sm">Quốc phòng</div>
+                  <div class="bg-teal-50 p-2 rounded text-center text-sm">An ninh</div>
+                  <div class="bg-teal-50 p-2 rounded text-center text-sm">Năng lượng</div>
+                  <div class="bg-teal-50 p-2 rounded text-center text-sm">Viễn thông</div>
+                  <div class="bg-teal-50 p-2 rounded text-center text-sm">Tài chính</div>
+                  <div class="bg-teal-50 p-2 rounded text-center text-sm">Ngân hàng</div>
+                </div>
+                <p class="text-sm text-gray-600 mt-3">
+                  Nhnước sdụng chính sách thuế, pháp luật vđiều tiết vmđ<strong>hạn chmặt trái của thtrường</strong> 
+                  vbảo đảm <strong>định hướng xhội chnghĩa</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Tiếp thu vkthừa -->
+          <div class="bg-white border-2 border-purple-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <h4 class="text-xl font-bold text-purple-700 mb-4 flex items-center">
+              <span class="bg-purple-100 rounded-full px-4 py-2 mr-3 text-2xl">3</span>
+              Tiếp Thu vKThừa Thành Tựu Của TBCN
+            </h4>
+
+            <div class="bg-purple-50 p-4 rounded-lg mb-4">
+              <p class="font-semibold text-purple-800 mb-2">Nguyên tắc:</p>
+              <p class="text-gray-700 leading-relaxed">
+                Nếu ch"bqua" mkhông "kthừa", xhội s<strong>tclập khỏi dòng chảy tiến bcủa nhân loại</strong>. 
+                Vvậy, Đảng xác định: tiếp thu khoa học công nghhiện đại, học hỏi phương thức quản ltiên tiến 
+                vtận dụng thành tựu của toàn cầu hóa.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-gradient-to-r from-blue-50 to-cyan-50 p-5 rounded-lg border-2 border-blue-200">
+                <h5 class="font-bold text-blue-700 mb-3 flex items-center">
+                  Công ngh</h5>
+                <p class="text-sm text-gray-700 mb-3">
+                  Việt Nam thu hút <strong>Samsung Electronics</strong> v<strong>Intel</strong> đưa điện thoại 
+                  vlinh kiện điện ttrthành <strong>nhóm xuất khẩu lớn nhất</strong>.
+                </p>
+                <div class="bg-white p-3 rounded">
+                  <p class="text-sm text-gray-600">
+                    Chuyển đổi squốc gia<br>
+                    Phát triển htầng 5G<br>
+                    Tiếp thu thành tựu <strong>cách mạng công nghiệp 4.0</strong> mkhông lặp lại toàn bcon đường công nghiệp hóa truyền thống
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-green-50 to-teal-50 p-5 rounded-lg border-2 border-green-200">
+                <h5 class="font-bold text-green-700 mb-3 flex items-center">
+                  Phương thức quản l</h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  Việt Nam áp dụng các hình thức vốn được phát triển trong các nước tbản:
+                </p>
+                <div class="grid md:grid-cols-2 gap-3 mt-3">
+                  <div class="bg-white p-3 rounded shadow-sm">
+                    <span class="font-semibold text-green-700"></span> Mô hình công ty cổ phần
+                  </div>
+                  <div class="bg-white p-3 rounded shadow-sm">
+                    <span class="font-semibold text-green-700"></span> Thị trường chứng khoán
+                  </div>
+                  <div class="bg-white p-3 rounded shadow-sm">
+                    <span class="font-semibold text-green-700"></span> Cải cách hành chính minh bạch
+                  </div>
+                  <div class="bg-white p-3 rounded shadow-sm">
+                    <span class="font-semibold text-green-700"></span> Pháp luật kinh doanh hiện đại
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 mt-3 italic">
+                  Được vận dụng trong <strong>nền kinh tthtrường định hướng xhội chnghĩa</strong>
+                </p>
+              </div>
+
+              <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-5 rounded-lg border-2 border-orange-200">
+                <h5 class="font-bold text-orange-700 mb-3 flex items-center">
+                  Hội nhập quốc t</h5>
+                <div class="space-y-2 text-sm text-gray-700">
+                  <p>
+                    <strong>WTO (2007), CPTPP, EVFTA</strong> giúp Việt Nam:
+                  </p>
+                  <ul class="ml-6 space-y-1">
+                    <li> Tiếp cận <strong>thtrường rộng lớn</strong></li>
+                    <li> Thu hút vốn FDI chất lượng cao</li>
+                    <li> Nâng cao tiêu chuẩn sản xuất theo <strong>chuẩn quốc tế</strong></li>
+                  </ul>
+                  <div class="bg-white p-3 rounded mt-3">
+                    <p class="font-semibold text-orange-800">
+                      �Cchthtrường được sdụng nhmột <strong>công cụ</strong>, 
+                      không đn<strong>quyết định bản chất chđộ</strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Biến đổi toàn diện -->
+          <div class="bg-white border-2 border-pink-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <h4 class="text-xl font-bold text-pink-700 mb-4 flex items-center">
+              <span class="bg-pink-100 rounded-full px-4 py-2 mr-3 text-2xl">4</span>
+              SBiến Đổi Toàn Diện, Lâu Dài vPhức Tạp
+            </h4>
+
+            <div class="bg-pink-50 p-4 rounded-lg mb-4">
+              <p class="font-semibold text-pink-800 mb-2"> Thực tế:</p>
+              <p class="text-gray-700 leading-relaxed">
+                Quđlên chnghĩa xhội <strong>không diễn ra trong một sớm một chiều</strong>. 
+                Tnăm 1975 đến nay, Việt Nam vẫn trong <strong>thời kquđộ</strong> vchưa tuyên bhoàn thành 
+                xây dựng chnghĩa xhội.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-white border-l-4 border-blue-500 p-4 rounded-r-lg shadow">
+                <h5 class="font-bold text-blue-700 mb-3">�Qutrình lâu dài, nhiều chặng đường</h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  Các Đại hội Đảng liên tục khẳng định đây lthời kđòi hỏi <strong>sđiều chỉnh liên tục</strong>:
+                </p>
+                <div class="bg-blue-50 p-3 rounded">
+                  <p class="text-sm font-semibold text-blue-800">
+                    �Bước ngoặt tiêu biểu: <strong>Đổi mới năm 1986</strong>
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-white border-l-4 border-green-500 p-4 rounded-r-lg shadow">
+                <h5 class="font-bold text-green-700 mb-3">�Biến đổi trên tất ccác lĩnh vực</h5>
+                <div class="space-y-2 text-sm">
+                  <div class="flex items-start space-x-2">
+                    <div>
+                      <strong>Kinh tế:</strong> Tkhoạch hóa tập trung <span class="text-green-700 font-semibold">Kinh tthtrường định hướng XHCN</span>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-2">
+                    <div>
+                      <strong>Chính trị:</strong> Xây dựng <span class="text-green-700 font-semibold">Nhnước pháp quyền</span> 
+                      theo Hiến pháp 2013
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-2">
+                    <div>
+                      <strong>Văn hóa Xhội:</strong> Mrộng giáo dục, phcập y tế, xây dựng 
+                      <span class="text-green-700 font-semibold">nền văn hóa tiên tiến đậm đbản sắc dân tộc</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-300 p-5 rounded-lg">
+                <h5 class="font-bold text-yellow-800 mb-3 flex items-center">
+                  Đặc điểm thời kquđ</h5>
+                <div class="space-y-3 text-sm text-gray-700">
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-gray-800 mb-2">Nền kinh thiện nay:</p>
+                    <p>
+                      <strong>Nhiều hình thức shữu</strong> v<strong>nhiều thành phần kinh tế</strong> cùng tồn tại:
+                    </p>
+                    <div class="grid grid-cols-2 gap-2 mt-2">
+                      <span class="bg-blue-50 px-2 py-1 rounded text-center">Nhnước</span>
+                      <span class="bg-green-50 px-2 py-1 rounded text-center">Tập thể</span>
+                      <span class="bg-purple-50 px-2 py-1 rounded text-center">Tnhân</span>
+                      <span class="bg-orange-50 px-2 py-1 rounded text-center">Vốn nước ngoài</span>
+                    </div>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="mb-2">
+                      Quan h<strong>thumướn lao động</strong> v<strong>chênh lệch thu nhập</strong> vẫn còn, 
+                      song Nhnước điều tiết thông qua <strong>chính sách an sinh xhội</strong> nhằm hướng tới công bằng.
+                    </p>
+                  </div>
+                  <div class="bg-yellow-100 border-l-4 border-yellow-500 p-3 rounded-r">
+                    <p class="italic text-gray-700">
+                      <strong>Đặc điểm điển hình:</strong> Cái mới chưa hoàn toàn thay thcái cũ, xhội vận động 
+                      trong trạng thái <strong>đan xen</strong> giữa tiến bvhạn chế, giữa định hướng XHCN vthực tiễn kinh tthtrường đa dạng.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer links -->
+        <div class="mt-8 bg-gray-50 rounded-xl p-6 border-2 border-gray-200">
+          <h5 class="font-bold text-gray-800 mb-4 text-lg flex items-center">
+            Tài Liệu Tham Khảo Thêm
+          </h5>
+          <div class="grid md:grid-cols-2 gap-3 text-sm">
+            <a href="http://baotanglichsu.vn" target="_blank" class="text-blue-600 hover:underline flex items-center">
+              Bảo tàng Lịch sViệt Nam
+            </a>
+            <a href="http://www.baotanglichsutphcm.com.vn" target="_blank" class="text-blue-600 hover:underline flex items-center">
+              Bảo tàng Lịch sTP.HCM
+            </a>
+            <a href="http://baotangchungtichchientranh.vn" target="_blank" class="text-blue-600 hover:underline flex items-center">
+              Bảo tàng Chứng tích Chiến tranh
+            </a>
+            <a href="http://baotanglichsuquansu.vn" target="_blank" class="text-blue-600 hover:underline flex items-center">
+              Bảo tàng Lịch sQuân sVN
+            </a>
+            <a href="http://hoalo.vn" target="_blank" class="text-blue-600 hover:underline flex items-center">
+              Tham quan ảo Hỏa L</a>
+            <a href="http://vr360.yoolife.vn" target="_blank" class="text-blue-600 hover:underline flex items-center">
+              VR360 YooLife
+            </a>
+          </div>
+        </div>
+      `
+    },
+    {
+      id: 4,
+      title: 'Con Đường QuĐộ',
+      content: `
+        <h3 class="text-2xl font-bold mb-6 text-red-600">Đặc Điểm QuĐLên ChNghĩa XHội Việt Nam</h3>
+        
+        <div class="bg-gradient-to-r from-red-50 to-yellow-50 border-l-4 border-red-500 p-6 mb-6 rounded-lg shadow-md">
+          <p class="font-semibold text-lg mb-3 flex items-center">
+            Đặc điểm cbản:
+          </p>
+          <p class="text-gray-700 mb-3 leading-relaxed">
+            Việt Nam tiến lên chnghĩa xhội (CNXH) <strong class="text-red-600">bqua chđtbản chnghĩa</strong> 
+            trong điều kiện vừa thuận lợi vừa khkhăn đan xen.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-blue-50 p-5 rounded-lg border-2 border-blue-200">
+            <h4 class="font-bold text-lg mb-3 text-blue-700 flex items-center">
+              VĐiểm Xuất Phát
+            </h4>
+            <ul class="space-y-2 text-gray-700">
+              <li>Xuất phát txhội <strong>thuộc địa, nửa phong kiến</strong></li>
+              <li>Lực lượng sản xuất <strong>rất thấp</strong></li>
+              <li>Trải qua chiến tranh ác liệt, hậu qunặng nề</li>
+              <li>Tàn dthực dân, phong kiến còn nhiều</li>
+              <li>Thlực thđịch thường xuyên phhoại</li>
+            </ul>
+          </div>
+
+          <div class="bg-purple-50 p-5 rounded-lg border-2 border-purple-200">
+            <h4 class="font-bold text-lg mb-3 text-purple-700 flex items-center">
+              VBối Cảnh Thời Đại
+            </h4>
+            <ul class="space-y-2 text-gray-700">
+              <li>Cách mạng <strong>khoa học - công nghệ</strong> diễn ra mạnh mẽ</li>
+              <li><strong>Toàn cầu hóa</strong> sâu sắc</li>
+              <li>Thời đại quđtCNTB lên CNXH</li>
+              <li>Các nước vừa hợp tác vừa đấu tranh gay gắt</li>
+            </ul>
+          </div>
+        </div>
+      `
+    },
+    {
+      id: 2,
+      title: 'Nhận Thức Mới Của Đảng',
+      content: `
+        <h3 class="text-2xl font-bold mb-6 text-red-600">4 Điểm Cốt Lõi VCon Đường "BQua TBCN"</h3>
+
+        <div class="space-y-5">
+          <div class="bg-white border-l-4 border-green-500 p-5 rounded-r-lg shadow-md hover:shadow-lg transition-shadow">
+            <h4 class="font-bold text-lg mb-2 text-green-700">
+              <span class="bg-green-100 rounded-full px-3 py-1 mr-2">1</span>
+              Con Đường Tất Yếu Khách Quan
+            </h4>
+            <p class="text-gray-700 ml-10">
+              Phản ánh đúng <strong>quy luật phát triển</strong> của cách mạng Việt Nam.
+            </p>
+          </div>
+
+          <div class="bg-white border-l-4 border-blue-500 p-5 rounded-r-lg shadow-md hover:shadow-lg transition-shadow">
+            <h4 class="font-bold text-lg mb-2 text-blue-700">
+              <span class="bg-blue-100 rounded-full px-3 py-1 mr-2">2</span>
+              Nghĩa "BQua"
+            </h4>
+            <p class="text-gray-700 ml-10">
+              Bqua việc xác lập <strong>vtrthống trị</strong> của quan hsản xuất 
+              vkiến trúc thượng tầng tbản chnghĩa.
+            </p>
+          </div>
+
+          <div class="bg-white border-l-4 border-purple-500 p-5 rounded-r-lg shadow-md hover:shadow-lg transition-shadow">
+            <h4 class="font-bold text-lg mb-2 text-purple-700">
+              <span class="bg-purple-100 rounded-full px-3 py-1 mr-2">3</span>
+              Tiếp Thu Thành Tựu
+            </h4>
+            <p class="text-gray-700 ml-10">
+              Kthừa những thành tựu dưới CNTB, đặc biệt v<strong>khoa học - công nghệ</strong>, 
+              đphát triển nhanh lực lượng sản xuất.
+            </p>
+          </div>
+
+          <div class="bg-white border-l-4 border-orange-500 p-5 rounded-r-lg shadow-md hover:shadow-lg transition-shadow">
+            <h4 class="font-bold text-lg mb-2 text-orange-700">
+              <span class="bg-orange-100 rounded-full px-3 py-1 mr-2">4</span>
+              SBiến Đổi VChất
+            </h4>
+            <p class="text-gray-700 ml-10 mb-3">
+              Biến đổi trên <strong>tất ccác lĩnh vực</strong>, lsnghiệp rất khkhăn, 
+              phức tạp, lâu dài với nhiều chặng đường.
+            </p>
+            <div class="bg-orange-50 p-3 rounded ml-10">
+              <p class="text-sm text-gray-600">
+                �<em>Thời knày vẫn còn nhiều hình thức shữu, nhiều thành phần kinh tế, 
+                còn quan hbóc lột nhưng không givai trthống trị.</em>
+              </p>
+            </div>
+          </div>
+        </div>
+      `
+    },
+    {
+      id: 3,
+      title: '8 Đặc Trưng CNXH',
+      content: `
+        <h3 class="text-2xl font-bold mb-6 text-red-600">Các Đặc Trưng CBản Của ChNghĩa XHội Việt Nam</h3>
+        
+        <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl mb-6 shadow-lg">
+          <p class="text-sm text-gray-600 mb-2">�Theo Cương lĩnh (bsung, phát triển năm 2011)</p>
+          <p class="font-semibold text-gray-800">8 đặc trưng bản chất định hình mhình chnghĩa xhội Việt Nam</p>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Đặc trưng 1 -->
+          <div class="bg-white border-2 border-red-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-red-700 mb-2">1. Dân Giàu, Nước Mạnh, Dân Chủ, Công Bằng, Văn Minh</h4>
+                <p class="text-gray-600 text-sm italic">Mục tiêu tổng quát kết tinh giữa mục tiêu kinh tế, chính trvgitrnhân văn</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-4 rounded-lg">
+                <h5 class="font-bold text-orange-800 mb-2 flex items-center">
+                  Dân Giàu
+                </h5>
+                <p class="text-gray-700 text-sm mb-2">
+                  Không chtăng thu nhập mcòn nâng cao chất lượng sống thông qua tiếp cận giáo dục, y tvan sinh xhội.
+                </p>
+                <div class="bg-white p-3 rounded mt-2">
+                  <p class="text-sm text-gray-600">
+                    <strong>Thành tựu:</strong> Sau Đổi mới 1986, Việt Nam chuyển tnhóm nước nghèo sang thu nhập trung bình, 
+                    tlhnghèo giảm mạnh được Ngân hàng Thgiới đánh gilmột trong những quốc gia giảm nghèo nhanh nhất thgiới.
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-3">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                  <h5 class="font-bold text-blue-800 mb-2 flex items-center">
+                    Nước Mạnh
+                  </h5>
+                  <p class="text-sm text-gray-700">
+                    Cnội lực kinh tlẫn vthquốc tế: kim ngạch xuất khẩu hàng trăm tUSD/năm, 
+                    tham gia sâu chuỗi cung ứng toàn cầu, givững chquyền vổn định chính trị.
+                  </p>
+                </div>
+
+                <div class="bg-purple-50 p-4 rounded-lg">
+                  <h5 class="font-bold text-purple-800 mb-2 flex items-center">
+                    Dân Ch</h5>
+                  <p class="text-sm text-gray-700">
+                    Bầu cđịnh kỳ, quyền tham gia góp dthảo luật, 
+                    thực hiện quy chdân chcsở.
+                  </p>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <h5 class="font-bold text-green-800 mb-2 flex items-center">
+                    Công Bằng
+                  </h5>
+                  <p class="text-sm text-gray-700">
+                    Chính sách thulũy tiến, htrvùng sâu vùng xa, 
+                    chương trình xây dựng nông thôn mới.
+                  </p>
+                </div>
+
+                <div class="bg-teal-50 p-4 rounded-lg">
+                  <h5 class="font-bold text-teal-800 mb-2 flex items-center">
+                    Văn Minh
+                  </h5>
+                  <p class="text-sm text-gray-700">
+                    Xhội kcương, nhân ái, phát triển bền vững cam kết giảm phát thải ròng v0 vào 2050, 
+                    tăng trưởng xanh.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Đặc trưng 2 -->
+          <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-blue-700 mb-2">2. Do Nhân Dân Làm Chủ</h4>
+                <p class="text-gray-600 text-sm italic">Bản chất: Xóa báp bức bóc lột, trao quyền làm chthực scho nhân dân lao động</p>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                <h5 class="font-bold text-blue-800 mb-2">�Cshiến định</h5>
+                <p class="text-sm text-gray-700">
+                  <strong>Hiến pháp 2013 (Điều 6):</strong> Quyền lực nhnước thuộc vnhân dân, 
+                  thực hiện thông qua cdân chtrực tiếp lẫn dân chđại diện.
+                </p>
+              </div>
+
+              <div class="grid md:grid-cols-3 gap-3">
+                <div class="bg-white border-2 border-purple-200 p-4 rounded-lg">
+                  <h5 class="font-semibold text-purple-700 mb-2 text-sm flex items-center">
+                    Chính Tr</h5>
+                  <ul class="text-xs text-gray-700 space-y-1">
+                    <li>Bầu cQuốc hội vHĐND</li>
+                    <li>Quyền ứng cử</li>
+                    <li>Giám sát đại biểu dân cử</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white border-2 border-green-200 p-4 rounded-lg">
+                  <h5 class="font-semibold text-green-700 mb-2 text-sm flex items-center">
+                    Kinh T</h5>
+                  <ul class="text-xs text-gray-700 space-y-1">
+                    <li>Đất đai thuộc shữu toàn dân</li>
+                    <li>Tham gia quản lDN qua công đoàn</li>
+                    <li>Bảo vbởi Luật Lao động</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white border-2 border-orange-200 p-4 rounded-lg">
+                  <h5 class="font-semibold text-orange-700 mb-2 text-sm flex items-center">
+                    XHội
+                  </h5>
+                  <ul class="text-xs text-gray-700 space-y-1">
+                    <li>Mặt trận Tquốc</li>
+                    <li>Đoàn Thanh niên</li>
+                    <li>Hội Liên hiệp Phnữ</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-blue-100 to-purple-100 border-2 border-blue-300 p-4 rounded-lg">
+                <p class="font-semibold text-blue-900 text-center">
+                  Nguyên tắc cốt lõi: <strong>"Dân biết, dân bàn, dân làm, dân kiểm tra"</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Đặc trưng 3 -->
+          <div class="bg-white border-2 border-green-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-green-700 mb-2">3. Nền Kinh TPhát Triển Cao, Lực Lượng Sản Xuất Hiện Đại</h4>
+                <p class="text-gray-600 text-sm italic">Không phải chia đều cái nghèo mtạo ra của cải dồi dào trên nền tảng hiện đại</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-green-50 p-4 rounded-lg">
+                <h5 class="font-bold text-green-800 mb-2">Chuyển dịch ccấu kinh tế</h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  Sau Đổi mới 1986: Tnông nghiệp Công nghiệp + Dịch v</p>
+                <div class="bg-white p-3 rounded">
+                  <p class="text-sm text-gray-600">
+                    <strong>Thực tế:</strong> Samsung Electronics vIntel biến Việt Nam thành trung tâm sản xuất điện tlớn khu vực. 
+                    Điện thoại vlinh kiện lnhóm xuất khẩu hàng đầu.
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-3">
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-blue-800 mb-2 flex items-center">
+                    Lực Lượng Sản Xuất Hiện Đại
+                  </h5>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>Chuyển đổi squốc gia</li>
+                    <li>Htầng 5G</li>
+                    <li>Tăng ttrọng kinh tstrong GDP</li>
+                    <li>Gắn với cách mạng 4.0</li>
+                  </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-purple-800 mb-2 flex items-center">
+                    Quan HSản Xuất PhHợp
+                  </h5>
+                  <p class="text-sm text-gray-700 mb-2">
+                    <strong>Hiến pháp 2013:</strong> Nhiều hình thức shữu, nhiều thành phần kinh tế, 
+                    kinh tnhnước givai trchđạo.
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-r-lg">
+                <p class="text-sm text-gray-800">
+                  <strong>Bài học Đổi mới:</strong> Khi cchbao cấp tập trung bxóa bvkinh ttnhân được thừa nhận, 
+                  lực lượng sản xuất được giải phóng Kinh ttăng trưởng mạnh. Chứng minh tính tất yếu của 
+                  <strong>kinh tthtrường định hướng XHCN</strong>: Không thuần nhất tbản, không quay lại bao cấp, 
+                  vận hành theo quy luật thtrường dưới định hướng vđiều tiết của Nhnước.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Đặc trưng 4 -->
+          <div class="bg-white border-2 border-pink-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-pink-700 mb-2">4. Nền Văn Hóa Tiên Tiến, Đậm ĐBản Sắc Dân Tộc</h4>
+                <p class="text-gray-600 text-sm italic">Văn hóa lnền tảng tinh thần của xhội</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-gradient-to-r from-blue-50 to-cyan-50 p-4 rounded-lg border-2 border-blue-200">
+                <h5 class="font-bold text-blue-800 mb-2 flex items-center">
+                  Tiên Tiến
+                </h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  Không phải chạy theo trào lưu mtiếp nhận gitrphquát của nhân loại: 
+                  dân chủ, khoa học, sáng tạo vnghthuật hiện đại.
+                </p>
+                <div class="grid grid-cols-2 gap-2 mt-2">
+                  <div class="bg-white p-2 rounded text-center text-sm">Hợp tác giáo dục quốc tế</div>
+                  <div class="bg-white p-2 rounded text-center text-sm">Công nghiệp văn hóa</div>
+                  <div class="bg-white p-2 rounded text-center text-sm">Công ước UNESCO</div>
+                  <div class="bg-white p-2 rounded text-center text-sm">Bảo tồn di sản</div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-4 rounded-lg border-2 border-orange-200">
+                <h5 class="font-bold text-orange-800 mb-3 flex items-center">
+                  Đậm ĐBản Sắc Dân Tộc
+                </h5>
+                <p class="text-sm text-gray-700 mb-3">
+                  Hội nhập không đồng nghĩa với đánh mất bản sắc.
+                </p>
+                <div class="space-y-2">
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-orange-900 mb-1">Di sản UNESCO:</p>
+                    <p class="text-xs text-gray-700">
+                      Nhnhạc cung đình HuDân ca quan hBắc Ninh Tín ngưỡng thcúng Hùng Vương
+                    </p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-orange-900 mb-1">Ngôn ngvtruyền thống:</p>
+                    <p class="text-xs text-gray-700">
+                      Tiếng Việt thống nhất trong giáo dục vquản lTết Nguyên đán Thcúng ttiên Lhội truyền thống
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-green-100 border-2 border-green-400 p-4 rounded-lg">
+                <p class="text-center text-gray-800 font-semibold italic">
+                  "Nền văn hóa Việt Nam phát triển nhcây tre: Rbám sâu vào đất truyền thống, 
+                  thân vươn cao trong dòng chảy toàn cầu"
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Đặc trưng 5 -->
+          <div class="bg-white border-2 border-indigo-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-indigo-700 mb-2">5. Con Người CCuộc Sống Ấm No, TDo, Hạnh Phúc, Phát Triển Toàn Diện</h4>
+                <p class="text-gray-600 text-sm italic">Con người vừa lmục tiêu vừa lđộng lực của chnghĩa xhội</p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="space-y-3">
+                <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+                  <h5 class="font-bold text-green-800 mb-2 flex items-center">
+                    <span class="mr-2"></span>Ấm No
+                  </h5>
+                  <p class="text-sm text-gray-700">
+                    Thoát nghèo vcan sinh: Bảo hiểm y ttoàn dân, chương trình giảm nghèo bền vững, 
+                    htrngười yếu thế.
+                  </p>
+                </div>
+
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                  <h5 class="font-bold text-blue-800 mb-2 flex items-center">
+                    <span class="mr-2"></span>Tự Do
+                  </h5>
+                  <p class="text-sm text-gray-700">
+                    <strong>Hiến pháp 2013:</strong> Tdo tín ngưỡng, kinh doanh, học tập vsáng tạo 
+                    (trong khuôn khpháp luật).
+                  </p>
+                </div>
+              </div>
+
+              <div class="space-y-3">
+                <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-r-lg">
+                  <h5 class="font-bold text-purple-800 mb-2 flex items-center">
+                    Hạnh Phúc
+                  </h5>
+                  <p class="text-sm text-gray-700">
+                    Không thuần túy vật chất: An toàn, gắn kết cộng đồng, đời sống tinh thần phong phqua văn hóa vlhội.
+                  </p>
+                </div>
+
+                <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-lg">
+                  <h5 class="font-bold text-orange-800 mb-2 flex items-center">
+                    Phát Triển Toàn Diện
+                  </h5>
+                  <p class="text-sm text-gray-700">
+                    Trtuệ, đạo đức, thchất: Phcập giáo dục, đại học vđào tạo nghề, 
+                    mạng lưới y tế, nâng cao tuổi thọ.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 bg-gradient-to-r from-indigo-100 to-purple-100 border-2 border-indigo-300 p-4 rounded-lg">
+              <p class="text-center text-gray-800">
+                <strong>Mọi chính sách kinh tvxhội đều hướng đến nâng cao đời sống nhân dân</strong><br>
+                <span class="text-sm">Trong khi chính con người, với tri thức vsáng tạo, lại llực lượng tạo ra tăng trưởng vtiến bộ</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Đặc trưng 6 -->
+          <div class="bg-white border-2 border-yellow-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-yellow-700 mb-2">6. Các Dân Tộc Bình Đẳng, Đoàn Kết, Tôn Trọng vGiúp Nhau Cùng Phát Triển</h4>
+                <p class="text-gray-600 text-sm italic">Việt Nam lcộng đồng của 54 dân tộc anh em</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-yellow-50 p-4 rounded-lg border-2 border-yellow-300">
+                <h5 class="font-bold text-yellow-800 mb-2">�Cshiến định vchính trị</h5>
+                <div class="space-y-2">
+                  <p class="text-sm text-gray-700">
+                    <strong>Hiến pháp 2013:</strong> Các dân tộc bình đẳng vquyền vnghĩa vụ, 
+                    nghiêm cấm mọi hành vi kthvchia rdân tộc.
+                  </p>
+                  <p class="text-sm text-gray-700">
+                    <strong>Mặt trận Tquốc Việt Nam:</strong> Tập hợp đại diện các dân tộc, tôn giáo vtầng lớp xhội 
+                    thchhóa tinh thần đoàn kết.
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-green-50 to-teal-50 p-4 rounded-lg border-2 border-green-300">
+                <h5 class="font-bold text-green-800 mb-3 flex items-center">
+                  Giúp Nhau Cùng Phát Triển
+                </h5>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-green-900 mb-1">Chương trình mục tiêu quốc gia:</p>
+                    <ul class="text-xs text-gray-700 space-y-1">
+                      <li> Phát triển KT-XH vùng DTTS</li>
+                      <li> Htầng giao thông, điện</li>
+                      <li> Trường học vtrạm y tế</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-green-900 mb-1">Chính sách ưu đãi:</p>
+                    <ul class="text-xs text-gray-700 space-y-1">
+                      <li>Ctuyển cho học sinh DTTS</li>
+                      <li>Học bổng đặc biệt</li>
+                      <li>Bảo tồn văn hóa các dân tộc</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-blue-100 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                <p class="text-sm text-gray-800">
+                  <strong>Minh chứng thực tiễn:</strong> Trong bối cảnh vấn đdân tộc trên thgiới còn nhiều phức tạp, 
+                  việc Việt Nam duy trđược ổn định xhội vthống nhất lãnh thchính lminh chứng cho hiệu qucủa chính sách dân tộc. 
+                  <em>Đa dạng văn hóa được xem ltài sản quốc gia, không phải trngại phát triển.</em>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Đặc trưng 7 -->
+          <div class="bg-white border-2 border-purple-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-purple-700 mb-2">7. NhNước Pháp Quyền XHCN Của Nhân Dân, Do Nhân Dân, VNhân Dân, Do Đảng Cộng Sản Lãnh Đạo</h4>
+                <p class="text-gray-600 text-sm italic">Trcột tchức quyền lực trong mhình CNXH Việt Nam</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-purple-50 p-4 rounded-lg border-2 border-purple-300">
+                <h5 class="font-bold text-purple-800 mb-2 flex items-center">
+                  NhNước Pháp Quyền
+                </h5>
+                <p class="text-sm text-gray-700 mb-3">
+                  <strong>Nguyên tắc cốt lõi:</strong> Quyền lực không đứng trên pháp luật mđược đặt vào khuôn khpháp luật 
+                  vchịu sgiám sát của nhân dân.
+                </p>
+                <div class="bg-white p-3 rounded">
+                  <p class="text-sm text-gray-700">
+                    <strong>Hiến pháp 2013:</strong> Mọi tchức vcnhân đều bình đẳng trước pháp luật. 
+                    Quyền con người được bảo đảm bằng một chương riêng vđược củng cqua việc tham gia 
+                    các công ước quốc tthông qua Liên Hợp Quốc.
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-3 gap-3">
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-blue-800 mb-2 text-sm">Của Dân</h5>
+                  <p class="text-xs text-gray-700">
+                    Quyền lực bắt nguồn tbầu c</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 border-2 border-green-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-green-800 mb-2 text-sm">Do Dân</h5>
+                  <p class="text-xs text-gray-700">
+                    Nhân dân tham gia xây dựng vgiám sát pháp luật
+                  </p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-purple-800 mb-2 text-sm">VDân</h5>
+                  <p class="text-xs text-gray-700">
+                    Chính sách hướng đến nâng cao đời sống van sinh
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-red-50 to-yellow-50 border-2 border-red-300 p-4 rounded-lg">
+                <h5 class="font-bold text-red-800 mb-2 flex items-center">
+                  SLãnh Đạo Của Đảng Cộng Sản Việt Nam
+                </h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  Được Hiến pháp xác định lnhân tbảo đảm định hướng XHCN trong toàn bhoạt động của Nhnước 
+                  <strong>không thay thpháp luật</strong> m<strong>định hướng xây dựng vhoàn thiện pháp luật</strong> 
+                  theo mục tiêu XHCN.
+                </p>
+                <div class="bg-white p-3 rounded">
+                  <p class="text-sm font-semibold text-red-900">
+                     Điểm khác biệt căn bản so với mhình nhnước pháp quyền tsản
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Đặc trưng 8 -->
+          <div class="bg-white border-2 border-teal-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-teal-700 mb-2">8. Quan HHữu NghvHợp Tác Với Các Nước Trên ThGiới</h4>
+                <p class="text-gray-600 text-sm italic">Chnghĩa xhội Việt Nam không khép kín</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-teal-50 p-4 rounded-lg border-2 border-teal-300">
+                <h5 class="font-bold text-teal-800 mb-2 flex items-center">
+                  Đường Lối Đối Ngoại
+                </h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  <strong>Nhất quán:</strong> Độc lập, tchủ, hòa bình, hữu nghvhợp tác cùng clợi
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 mt-2">
+                  <div class="bg-white p-2 rounded text-center text-xs">Thành viên LHQ</div>
+                  <div class="bg-white p-2 rounded text-center text-xs">HĐBA LHQ</div>
+                  <div class="bg-white p-2 rounded text-center text-xs">Gìn gihòa bình</div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-lg border-2 border-blue-300">
+                <h5 class="font-bold text-blue-800 mb-3 flex items-center">
+                  Chiến Lược Đa Phương Hóa, Đa Dạng Hóa
+                </h5>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-blue-900 mb-2">Tchức khu vực vtoàn cầu:</p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-blue-100 px-2 py-1 rounded text-xs">ASEAN</span>
+                      <span class="bg-blue-100 px-2 py-1 rounded text-xs">WTO</span>
+                      <span class="bg-blue-100 px-2 py-1 rounded text-xs">APEC</span>
+                    </div>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-blue-900 mb-2">Hiệp định thương mại:</p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-green-100 px-2 py-1 rounded text-xs">CPTPP</span>
+                      <span class="bg-green-100 px-2 py-1 rounded text-xs">EVFTA</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-4 rounded-lg border-2 border-orange-300">
+                <h5 class="font-bold text-orange-800 mb-2 flex items-center">
+                  Lợi Ích Của Hội Nhập
+                </h5>
+                <div class="space-y-2">
+                  <div class="flex items-start">
+                    <p class="text-sm text-gray-700">Thu hút vốn đầu t(FDI)</p>
+                  </div>
+                  <div class="flex items-start">
+                    <p class="text-sm text-gray-700">Tiếp thu khoa học công nghệ</p>
+                  </div>
+                  <div class="flex items-start">
+                    <p class="text-sm text-gray-700">Mrộng thtrường xuất khẩu</p>
+                  </div>
+                  <div class="flex items-start">
+                    <p class="text-sm text-gray-700">Hiện đại hóa lực lượng sản xuất</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-red-100 border-l-4 border-red-500 p-4 rounded-r-lg">
+                <p class="text-sm text-gray-800">
+                  <strong>Nguyên tắc quan trọng:</strong> Hội nhập không đồng nghĩa với lthuộc. 
+                  Việt Nam kiên định tôn trọng luật pháp quốc tế, bảo vlợi ích quốc gia trong đàm phán 
+                  vgivững ổn định chính trtrong bối cảnh thgiới biến động.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tổng Kết -->
+        <div class="mt-8 bg-gradient-to-r from-red-600 to-orange-500 text-white rounded-xl p-6 shadow-2xl">
+          <h4 class="text-2xl font-bold mb-4 text-center"> Tổng Quan 8 Đặc Trưng </h4>
+          <p class="text-center leading-relaxed">
+            8 đặc trưng này tạo thành một hthống chặt chẽ, phản ánh toàn diện bản chất của chnghĩa xhội Việt Nam: 
+            <strong>Vừa kthừa những gitrcốt lõi của chnghĩa Mác Lênin, vừa sáng tạo phhợp với điều kiện cthcủa Việt Nam, 
+            vừa hướng tới tương lai trong bối cảnh toàn cầu hóa vcách mạng công nghiệp 4.0.</strong>
+          </p>
+        </div>
+      `
+    },
+    {
+      id: 4,
+      title: '8 Phương Hướng',
+      content: `
+        <h3 class="text-2xl font-bold mb-6 text-red-600">Các Phương Hướng Xây Dựng ChNghĩa XHội Việt Nam Hiện Nay</h3>
+        
+        <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl mb-6 shadow-lg border-2 border-blue-200">
+          <p class="text-gray-800 leading-relaxed">
+            <strong>Mối quan hgiữa Đặc trưng vPhương hướng:</strong> 
+            Nếu <em>tám đặc trưng</em> xác định <strong>bản chất vhình ảnh</strong> của xhội xhội chnghĩa Việt Nam, 
+            th<em>tám phương hướng</em> chra <strong>con đường hiện thực hóa</strong> mhình đó. 
+            Chúng gắn kết nh<strong>mục tiêu vphương tiện, ltưởng vhành động</strong>.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Phương hướng 1 -->
+          <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-blue-700 mb-2">1. Đẩy Mạnh Công Nghiệp Hóa, Hiện Đại Hóa Gắn Với Kinh TTri Thức vBảo VMôi Trường</h4>
+                <p class="text-gray-600 text-sm italic">Điều kiện vật chất quyết định đxây dựng chnghĩa xhội</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h5 class="font-bold text-blue-800 mb-2">Tại sao quan trọng?</h5>
+                <p class="text-sm text-gray-700">
+                  Không cnền sản xuất hiện đại thmọi mục tiêu xhội đều chlước vọng. 
+                  Tsau Đổi mới, Việt Nam chuyển dịch ccấu tnông nghiệp sang công nghiệp vdịch vgitrcao.
+                </p>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-cyan-800 mb-3 flex items-center">
+                    Chuyển Dịch CCấu
+                  </h5>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>Hình thành khu công nghcao</li>
+                    <li>Tham gia chuỗi cung ứng toàn cầu</li>
+                    <li>Tgia công đơn giản Công nghcao</li>
+                  </ul>
+                  <div class="bg-white p-3 rounded mt-3">
+                    <p class="text-xs text-gray-600">
+                      <strong>Vdụ:</strong> Samsung Electronics vIntel đầu tsản xuất công nghcao tại Việt Nam
+                    </p>
+                  </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-purple-800 mb-3 flex items-center">
+                    Kinh TTri Thức
+                  </h5>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>Chuyển đổi squốc gia</li>
+                    <li>Thương mại điện tử</li>
+                    <li>Khởi nghiệp đổi mới sáng tạo</li>
+                  </ul>
+                  <div class="bg-white p-3 rounded mt-3">
+                    <p class="text-xs text-gray-600">
+                      <strong>Vdụ:</strong> Viettel đầu tnghiên cứu thiết b5G lấy tri thức làm động lực tăng trưởng
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-300 p-4 rounded-lg">
+                <h5 class="font-bold text-green-800 mb-3 flex items-center">
+                  Phát Triển Bền Vững
+                </h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  Phát triển không thđánh đổi môi trường định hướng tăng trưởng xanh, không "ăn vào tương lai"
+                </p>
+                <div class="grid grid-cols-2 gap-2 mt-2">
+                  <div class="bg-white p-2 rounded text-center text-xs">
+                    Phát thải ròng = 0 vào 2050
+                  </div>
+                  <div class="bg-white p-2 rounded text-center text-xs">
+                    Năng lượng tái tạo
+                  </div>
+                  <div class="bg-white p-2 rounded text-center text-xs">
+                    Bảo vtài nguyên thiên nhiên
+                  </div>
+                  <div class="bg-white p-2 rounded text-center text-xs">
+                    Cam kết COP26
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phương hướng 2 -->
+          <div class="bg-white border-2 border-green-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-green-700 mb-2">2. Phát Triển Kinh TThTrường Định Hướng XHội ChNghĩa</h4>
+                <p class="text-gray-600 text-sm italic">Vận dụng cchthtrường dưới squản lcủa Nhnước vđịnh hướng XHCN</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-green-50 p-4 rounded-lg border-2 border-green-300">
+                <h5 class="font-bold text-green-800 mb-2">Nguyên tắc cốt lõi</h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  <strong>Thtrường</strong> tạo năng lượng cạnh tranh, còn <strong>định hướng XHCN</strong> 
+                  gicho qutrình phát triển không chệch khỏi mục tiêu công bằng vphát triển vcon người.
+                </p>
+                <div class="bg-white p-3 rounded">
+                  <p class="text-sm font-semibold text-green-900">
+                    <strong>Hiến pháp 2013:</strong> Xác lập cspháp lcao nhất cho mhình này
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white border-2 border-blue-200 p-4 rounded-lg">
+                  <h5 class="font-bold text-blue-800 mb-3 text-sm">Nhiều Thành Phần Kinh Tế</h5>
+                  <div class="grid grid-cols-2 gap-2">
+                    <div class="bg-blue-50 p-2 rounded text-center text-xs">Nhnước</div>
+                    <div class="bg-green-50 p-2 rounded text-center text-xs">Tập thể</div>
+                    <div class="bg-purple-50 p-2 rounded text-center text-xs">Tnhân</div>
+                    <div class="bg-orange-50 p-2 rounded text-center text-xs">FDI</div>
+                  </div>
+                  <p class="text-xs text-gray-600 mt-2">
+                    Vận hành theo quy luật cung cầu, cạnh tranh vgic</p>
+                </div>
+
+                <div class="bg-white border-2 border-purple-200 p-4 rounded-lg">
+                  <h5 class="font-bold text-purple-800 mb-3 text-sm">Vai TrNhNước</h5>
+                  <ul class="text-xs text-gray-700 space-y-1">
+                    <li>Ban hành pháp luật</li>
+                    <li>Điều tiết vmô</li>
+                    <li>Bảo đảm an sinh xhội</li>
+                    <li>KT nhnước givai trchđạo</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-300 p-4 rounded-lg">
+                <h5 class="font-bold text-orange-800 mb-2 flex items-center">
+                  Lĩnh Vực Then Chốt Do NhNước Nắm Gi</h5>
+                <div class="grid md:grid-cols-2 gap-3 mt-2">
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-orange-900">Năng lượng</p>
+                    <p class="text-xs text-gray-600">PetroVietnam (dầu khí), EVN (điện lực)</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-orange-900">Tài chính & Htầng</p>
+                    <p class="text-xs text-gray-600">Bảo đảm an ninh kinh tvlợi ích quốc gia</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-green-100 border-l-4 border-green-500 p-4 rounded-r-lg">
+                <p class="text-sm text-gray-800">
+                  <strong>Định hướng XHCN:</strong> Tăng trưởng gắn với tiến bvcông bằng xhội. 
+                  <em>Thtrường tạo ra của cải, Nhnước định hướng phân phối đhạn chbất bình đẳng cực đoan 
+                  thông qua chính sách thuvphúc lợi xhội.</em>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phương hướng 3 -->
+          <div class="bg-white border-2 border-purple-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-purple-700 mb-2">3. Xây Dựng Văn Hóa, Con Người vNâng Cao Đời Sống Nhân Dân</h4>
+                <p class="text-gray-600 text-sm italic">Đặt con người vào trung tâm của phát triển</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-purple-50 p-4 rounded-lg border-2 border-purple-300">
+                <h5 class="font-bold text-purple-800 mb-2">Triết lphát triển</h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  Kinh tlnền móng, nhưng <strong>văn hóa vcon người mới llinh hồn</strong>. 
+                  Không tách rời tăng trưởng kinh tkhỏi mục tiêu văn hóa xhội.
+                </p>
+                <div class="bg-white p-3 rounded">
+                  <p class="text-sm font-semibold text-purple-900">
+                    Không "giàu trước, văn hóa tính sau" Thực hiện tiến bvcông bằng xhội 
+                    <strong>ngay trong từng bước phát triển</strong>
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-3 gap-3">
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-blue-800 mb-2 text-sm flex items-center">
+                    Giáo Dục
+                  </h5>
+                  <p class="text-xs text-gray-700 mb-2">
+                    <strong>Quốc sách hàng đầu:</strong>
+                  </p>
+                  <ul class="text-xs text-gray-700 space-y-1">
+                    <li>Phcập tiểu học vTHCS</li>
+                    <li>Mrộng hthống đại học</li>
+                    <li>Tchđại học</li>
+                    <li>Hội nhập quốc tế</li>
+                  </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-purple-800 mb-2 text-sm flex items-center">
+                    KH-CN
+                  </h5>
+                  <p class="text-xs text-gray-700 mb-2">
+                    <strong>Động lực phát triển:</strong>
+                  </p>
+                  <ul class="text-xs text-gray-700 space-y-1">
+                    <li>Hsinh thái khởi nghiệp</li>
+                    <li>Chuyển đổi số</li>
+                    <li>Đầu tR&D</li>
+                  </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 border-2 border-green-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-green-800 mb-2 text-sm flex items-center">
+                    An Sinh XH
+                  </h5>
+                  <p class="text-xs text-gray-700 mb-2">
+                    <strong>Hiến pháp 2013:</strong>
+                  </p>
+                  <ul class="text-xs text-gray-700 space-y-1">
+                    <li>BHYT phrộng dân số</li>
+                    <li>Giảm nghèo bền vững</li>
+                    <li>Quyền chăm sóc sức khỏe</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-pink-50 to-rose-50 border-2 border-pink-300 p-4 rounded-lg">
+                <h5 class="font-bold text-pink-800 mb-3 flex items-center">
+                  Văn Hóa Trong Kinh TThTrường
+                </h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  Văn hóa không bxem nhtrong qutrình phát triển:
+                </p>
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="bg-white p-2 rounded text-center text-xs">Bảo tồn di sản</div>
+                  <div class="bg-white p-2 rounded text-center text-xs">Công nghiệp văn hóa</div>
+                  <div class="bg-white p-2 rounded text-center text-xs">Môi trường văn hóa lành mạnh</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phương hướng 4 -->
+          <div class="bg-white border-2 border-red-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-red-700 mb-2">4. Bảo Đảm Quốc Phòng vAn Ninh</h4>
+                <p class="text-gray-600 text-sm italic">Givững độc lập, chquyền lđiều kiện tiên quyết cho mọi khoạch phát triển</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-red-50 p-4 rounded-lg border-2 border-red-300">
+                <h5 class="font-bold text-red-800 mb-2">Cshiến định</h5>
+                <p class="text-sm text-gray-700">
+                  <strong>Hiến pháp 2013:</strong> Bảo vTquốc l<strong>nghĩa vthiêng liêng</strong> 
+                  v<strong>quyền cao quý</strong> của công dân.
+                </p>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-blue-800 mb-3 flex items-center">
+                    ThTrận Quốc Phòng Toàn Dân
+                  </h5>
+                  <ul class="text-sm text-gray-700 space-y-2">
+                    <li>Gắn với thtrận an ninh nhân dân</li>
+                    <li>Kết hợp phát triển KT - củng cQP</li>
+                    <li>Lực lượng vtrang chính quy, tinh nhuệ</li>
+                    <li>Từng bước hiện đại hóa</li>
+                  </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-purple-800 mb-3 flex items-center">
+                    An Ninh Phi Truyền Thống
+                  </h5>
+                  <p class="text-sm text-gray-700 mb-2">
+                    An ninh ngày nay không chlbiên giới hữu hình:
+                  </p>
+                  <div class="grid grid-cols-2 gap-2">
+                    <div class="bg-white p-2 rounded text-center text-xs">An ninh mạng</div>
+                    <div class="bg-white p-2 rounded text-center text-xs">An ninh kinh tế</div>
+                    <div class="bg-white p-2 rounded text-center text-xs">An ninh năng lượng</div>
+                    <div class="bg-white p-2 rounded text-center text-xs">Ứng phdịch bệnh</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-300 p-4 rounded-lg">
+                <h5 class="font-bold text-green-800 mb-2 flex items-center">
+                  Minh Chứng Thực Tiễn
+                </h5>
+                <div class="space-y-2">
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-green-900 mb-1">Đại dịch COVID-19:</p>
+                    <p class="text-xs text-gray-700">
+                      Hthống chính trvlực lượng chức năng huy động toàn diện bảo vsức khỏe nhân dân 
+                      vgiổn định xhội quan niệm QP-AN gắn với bảo vcon người theo nghĩa rộng.
+                    </p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-green-900 mb-1">Lực lượng gìn gihòa bình LHQ:</p>
+                    <p class="text-xs text-gray-700">
+                      Sức mạnh bảo vTquốc không chnằm vkhmcòn uy tín vvthquốc tế.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phương hướng 5 -->
+          <div class="bg-white border-2 border-indigo-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-indigo-700 mb-2">5. Thực Hiện Đường Lối Đối Ngoại Độc Lập, TChủ, Hòa Bình, Hợp Tác vPhát Triển</h4>
+                <p class="text-gray-600 text-sm italic">Hội nhập bằng bàn tay mnhưng đứng vững trên lợi ích dân tộc</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-indigo-50 p-4 rounded-lg border-2 border-indigo-300">
+                <h5 class="font-bold text-indigo-800 mb-3">Nguyên Tắc Nhất Quán</h5>
+                <div class="grid md:grid-cols-3 gap-3">
+                  <div class="bg-white p-3 rounded text-center">
+                    <p class="text-2xl mb-1"></p>
+                    <p class="text-xs text-gray-700">Không liên minh quân schống nước khác</p>
+                  </div>
+                  <div class="bg-white p-3 rounded text-center">
+                    <p class="text-2xl mb-1"></p>
+                    <p class="text-xs text-gray-700">Không phthuộc bất kcường quốc nào</p>
+                  </div>
+                  <div class="bg-white p-3 rounded text-center">
+                    <p class="text-2xl mb-1"></p>
+                    <p class="text-xs text-gray-700">Lợi ích quốc gia lên hàng đầu</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-blue-800 mb-3 flex items-center">
+                    <span class="mr-2"></span>Đa Phương Hóa, Đa Dạng Hóa
+                  </h5>
+                  <p class="text-sm text-gray-700 mb-2">
+                    Giảm rủi ro phthuộc vào một thtrường hay đối tác duy nhất:
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-100 px-3 py-1 rounded text-xs">LHQ</span>
+                    <span class="bg-green-100 px-3 py-1 rounded text-xs">ASEAN</span>
+                    <span class="bg-purple-100 px-3 py-1 rounded text-xs">WTO</span>
+                    <span class="bg-orange-100 px-3 py-1 rounded text-xs">APEC</span>
+                    <span class="bg-pink-100 px-3 py-1 rounded text-xs">CPTPP</span>
+                    <span class="bg-teal-100 px-3 py-1 rounded text-xs">EVFTA</span>
+                  </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 border-2 border-green-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-green-800 mb-3 flex items-center">
+                    Lợi Ích Hội Nhập
+                  </h5>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>Thu hút vốn đầu t(FDI)</li>
+                    <li>Tiếp thu KH-CN</li>
+                    <li>Mrộng thtrường xuất khẩu</li>
+                    <li>Hiện đại hóa lực lượng sản xuất</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-r-lg">
+                <p class="text-sm text-gray-800">
+                  <strong>Đàm phán thương mại:</strong> Bảo vngành sản xuất trong nước phhợp với cam kết quốc tế, 
+                  kiên định nguyên tắc tôn trọng luật pháp quốc ttrong các vấn đchquyền. 
+                  <em>Đối ngoại không chlnghi thức ngoại giao mlđộng lực phát triển vcông ccủng can ninh quốc gia.</em>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phương hướng 6 -->
+          <div class="bg-white border-2 border-yellow-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-yellow-700 mb-2">6. Xây Dựng Nền Dân ChXHội ChNghĩa vĐại Đoàn Kết Toàn Dân</h4>
+                <p class="text-gray-600 text-sm italic">Dân chlcchđnhân dân tham gia, giám sát vhưởng lợi tphát triển</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-yellow-50 p-4 rounded-lg border-2 border-yellow-300">
+                <h5 class="font-bold text-yellow-800 mb-2">Dân ChXHCN</h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  Không chlquyền bầu cđịnh kmlcchtoàn diện:
+                </p>
+                <div class="bg-white p-3 rounded">
+                  <p class="text-sm font-semibold text-yellow-900 mb-2">
+                    <strong>Hiến pháp 2013:</strong> Tất cquyền lực nhnước thuộc vnhân dân
+                  </p>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>Bầu cđại biểu Quốc hội vHĐND các cấp</li>
+                    <li>Tham gia góp dthảo luật</li>
+                    <li>Dân chcsở: "Dân biết, dân bàn, dân làm, dân kiểm tra"</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-red-800 mb-3 flex items-center">
+                    Dân ChGắn Với KCương
+                  </h5>
+                  <p class="text-sm text-gray-700">
+                    Quyền dân chđược bảo đảm trong <strong>khuôn khlợi ích chung</strong>, 
+                    tránh blợi dụng gây mất ổn định.
+                  </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-blue-800 mb-3 flex items-center">
+                    Đại Đoàn Kết Toàn Dân Tộc
+                  </h5>
+                  <p class="text-sm text-gray-700">
+                    Không chltình cảm ml<strong>chiến lược phát triển lâu dài</strong>.
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-300 p-4 rounded-lg">
+                <h5 class="font-bold text-green-800 mb-3 flex items-center">
+                  Mặt Trận TQuốc Việt Nam
+                </h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  Tập hợp các tchức, tôn giáo vdân tộc tạo khối thống nhất trong hthống chính tr</p>
+                <div class="bg-white p-3 rounded mt-2">
+                  <p class="text-sm text-gray-700">
+                    <strong>Chính sách:</strong> Dân tộc, tôn giáo van sinh xhội hướng tới 
+                    <strong>"Không đai bblại phía sau"</strong>
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-blue-100 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                <p class="text-sm text-gray-800 italic">
+                  Trong bối cảnh toàn cầu biến động, <strong>sđồng thuận xhội</strong> 
+                  chính lnguồn lực chính trquginhất đduy trổn định vphát triển bền vững.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phương hướng 7 -->
+          <div class="bg-white border-2 border-teal-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-teal-700 mb-2">7. Xây Dựng NhNước Pháp Quyền XHội ChNghĩa</h4>
+                <p class="text-gray-600 text-sm italic">Quyền lực được thực thi trong khuôn khpháp luật, minh bạch vckiểm soát</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-teal-50 p-4 rounded-lg border-2 border-teal-300">
+                <h5 class="font-bold text-teal-800 mb-2">CSPháp Lý</h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  <strong>Hiến pháp 2013:</strong> Xác định cspháp lcao nhất
+                </p>
+                <div class="bg-white p-3 rounded">
+                  <p class="text-sm text-gray-700">
+                    Hthống pháp luật được xây dựng vsửa đổi liên tục theo hướng:
+                  </p>
+                  <ul class="text-sm text-gray-700 space-y-1 mt-2">
+                    <li>Phhợp với KTTT định hướng XHCN</li>
+                    <li>Bảo đảm quyền con người</li>
+                    <li>Tương thích với cam kết quốc tế</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-blue-800 mb-3 flex items-center">
+                    Vai TrQuốc Hội
+                  </h5>
+                  <p class="text-sm text-gray-700">
+                    Cquan lập pháp thường xuyên điều chỉnh pháp luật đđáp ứng yêu cầu thực tiễn <strong>pháp luật không đứng yên</strong> mvận động cùng sphát triển.
+                  </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-purple-800 mb-3 flex items-center">
+                    Chuyển Đổi S</h5>
+                  <p class="text-sm text-gray-700 mb-2">
+                    Nâng cao hiệu lực quản lthông qua:
+                  </p>
+                  <ul class="text-xs text-gray-700 space-y-1">
+                    <li>Chính phsố</li>
+                    <li>Giảm thtục rườm rà</li>
+                    <li>Tăng công khai, minh bạch</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-orange-50 to-yellow-50 border-2 border-orange-300 p-4 rounded-lg">
+                <h5 class="font-bold text-orange-800 mb-3 flex items-center">
+                  CChKiểm Soát Quyền Lực
+                </h5>
+                <div class="space-y-2">
+                  <p class="text-sm text-gray-700">
+                    Phân công, phối hợp vkiểm soát giữa các cquan <strong>lập pháp, hành pháp vtpháp</strong>
+                  </p>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-orange-900 mb-1">Phòng chống tham nhũng:</p>
+                    <p class="text-xs text-gray-700">
+                      Đẩy mạnh dưới slãnh đạo của Đảng, củng cniềm tin xhội vbảo vquyền lợi hợp pháp của công dân
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phương hướng 8 -->
+          <div class="bg-white border-2 border-pink-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-pink-700 mb-2">8. Xây Dựng Đảng Cộng Sản Việt Nam Trong Sạch, Vững Mạnh</h4>
+                <p class="text-gray-600 text-sm italic">Lực lượng lãnh đạo Nhnước vxhội theo Hiến pháp 2013</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-pink-50 p-4 rounded-lg border-2 border-pink-300">
+                <h5 class="font-bold text-pink-800 mb-2">Vai TrLãnh Đạo</h5>
+                <p class="text-sm text-gray-700 mb-2">
+                  Đảng phải:
+                </p>
+                <div class="grid md:grid-cols-3 gap-2">
+                  <div class="bg-white p-2 rounded text-center text-xs">
+                    Kiên định mục tiêu độc lập dân tộc vCNXH
+                  </div>
+                  <div class="bg-white p-2 rounded text-center text-xs">
+                    Đra đường lối phhợp thực tiễn
+                  </div>
+                  <div class="bg-white p-2 rounded text-center text-xs">
+                    Givững bản chất cách mạng vkhoa học
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-blue-800 mb-3 flex items-center">
+                    Năng Lực Lãnh Đạo
+                  </h5>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>Hoạch định đường lối đúng đắn</li>
+                    <li>Dbáo tình hình trong nước vquốc tế</li>
+                    <li>Tchức thực hiện hiệu quả</li>
+                    <li>Đội ngcán bctrình độ, bản lĩnh</li>
+                    <li>Tduy đổi mới trong hội nhập vchuyển đổi số</li>
+                  </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-300 p-4 rounded-lg">
+                  <h5 class="font-bold text-red-800 mb-3 flex items-center">
+                    Sức Chiến Đấu
+                  </h5>
+                  <p class="text-sm text-gray-700 mb-2">
+                    Không nằm khẩu hiệu m<strong>hành động tchỉnh đốn</strong>:
+                  </p>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>Kiên quyết chống tham nhũng, tiêu cực</li>
+                    <li>Kiểm soát quyền lực trong công tác cán bộ</li>
+                    <li>Gigìn kluật, kcương</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-300 p-4 rounded-lg">
+                <h5 class="font-bold text-purple-800 mb-3 flex items-center">
+                  Đảng Lãnh Đạo, Dựa Vào Dân
+                </h5>
+                <div class="space-y-2">
+                  <p class="text-sm text-gray-700">
+                    Đảng lãnh đạo nhưng phải <strong>dựa vào dân, lắng nghe dân vchịu sgiám sát của dân</strong>
+                  </p>
+                  <div class="bg-white p-3 rounded">
+                    <p class="text-sm font-semibold text-purple-900">
+                      Một Đảng mạnh lĐảng biết tsửa mình
+                    </p>
+                    <p class="text-xs text-gray-700 mt-2">
+                      Khi lợi ích nhân dân lmục tiêu vdân chđược phát huy trong Đảng, 
+                      chính sách mới bén rvào thực tiễn vtạo được sđồng thuận xhội rộng rãi.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-r-lg">
+                <p class="text-sm text-gray-800">
+                  <strong>Minh chứng gần đây:</strong> Công tác phòng chống tham nhũng được đẩy mạnh trong những năm gần đây 
+                  lminh chứng cthcho quyết tâm tchỉnh đốn vnâng cao năng lực lãnh đạo của Đảng.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tổng kết -->
+        <div class="mt-8 bg-gradient-to-r from-red-600 to-orange-500 text-white rounded-xl p-6 shadow-2xl">
+          <h4 class="text-2xl font-bold mb-4 text-center flex items-center justify-center">
+            Mối Quan HGiữa 8 Phương Hướng
+          </h4>
+          <p class="text-center leading-relaxed mb-4">
+            8 phương hướng này tạo thành một <strong>hthống thống nhất, btrlẫn nhau</strong>. 
+            Trong qutrình thực hiện, phải đặc biệt chtrọng nắm vững vxltốt các <strong>mối quan hlớn</strong>:
+          </p>
+          <div class="grid md:grid-cols-2 gap-2 text-sm">
+            <div class="bg-white bg-opacity-20 rounded p-2 text-center">Đổi mới - Ổn định - Phát triển</div>
+            <div class="bg-white bg-opacity-20 rounded p-2 text-center">Kinh tthtrường - Định hướng XHCN</div>
+            <div class="bg-white bg-opacity-20 rounded p-2 text-center">Tăng trưởng kinh t- Phát triển văn hóa</div>
+            <div class="bg-white bg-opacity-20 rounded p-2 text-center">Đảng lãnh đạo - Nhnước quản l- Nhân dân làm chủ</div>
+          </div>
+        </div>
+      `
+    },
+    {
+      id: 5,
+      title: 'Mục Tiêu Phát Triển',
+      content: `
+        <h3 class="text-2xl font-bold mb-6 text-red-600">Mục Tiêu Phát Triển Chiến Lược</h3>
+        
+        <div class="bg-gradient-to-br from-red-600 to-yellow-500 text-white p-6 rounded-xl mb-6 shadow-2xl">
+          <p class="text-sm opacity-90 mb-2">Theo Đại hội XIII (2021)</p>
+          <h4 class="text-2xl font-bold">LTrình Phát Triển Việt Nam</h4>
+        </div>
+
+        <div class="space-y-6">
+          <div class="relative">
+            <div class="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-green-500"></div>
+            
+            <div class="relative pl-20 pb-8">
+              <div class="absolute left-4 top-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                1
+              </div>
+              <div class="bg-blue-50 border-2 border-blue-300 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <div class="flex items-center mb-3">
+                  <h4 class="text-2xl font-bold text-blue-700">Năm 2025</h4>
+                </div>
+                <ul class="space-y-2 text-gray-700">
+                  <li>Lnước <strong>đang phát triển</strong></li>
+                  <li>Ccông nghiệp theo hướng <strong>hiện đại</strong></li>
+                  <li>Vượt mức thu nhập <strong>trung bình thấp</strong></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="relative pl-20 pb-8">
+              <div class="absolute left-4 top-2 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                2
+              </div>
+              <div class="bg-yellow-50 border-2 border-yellow-300 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <div class="flex items-center mb-3">
+                  <h4 class="text-2xl font-bold text-yellow-700">Năm 2030</h4>
+                </div>
+                <ul class="space-y-2 text-gray-700">
+                  <li>Lnước <strong>đang phát triển</strong></li>
+                  <li>Ccông nghiệp <strong>hiện đại</strong></li>
+                  <li>Thu nhập <strong>trung bình cao</strong></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="relative pl-20">
+              <div class="absolute left-4 top-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                3
+              </div>
+              <div class="bg-gradient-to-br from-green-50 to-teal-50 border-2 border-green-400 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <div class="flex items-center mb-3">
+                  <h4 class="text-2xl font-bold text-green-700">Năm 2045</h4>
+                </div>
+                <ul class="space-y-2 text-gray-700 text-lg">
+                  <li class="flex items-center">
+                    <strong>Trthành nước PHÁT TRIỂN, thu nhập CAO</strong>
+                  </li>
+                </ul>
+                <div class="mt-4 bg-green-100 rounded-lg p-4">
+                  <p class="text-sm text-green-800">
+                    Đây lmốc 100 năm thành lập nước Việt Nam Dân chCộng hòa (nay lCHXHCN Việt Nam)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl p-6 shadow-xl">
+          <h4 class="text-xl font-bold mb-4 flex items-center">
+            12 Định Hướng Phát Triển (2021-2030)
+          </h4>
+          <div class="grid md:grid-cols-2 gap-3 text-sm">
+            <div class="bg-white bg-opacity-20 rounded-lg p-3">1. Đổi mới mạnh mtduy</div>
+            <div class="bg-white bg-opacity-20 rounded-lg p-3">2. Hoàn thiện thchkinh tthtrường ĐHXHCN</div>
+            <div class="bg-white bg-opacity-20 rounded-lg p-3">3. Đột phgiáo dục - đào tạo, KH-CN</div>
+            <div class="bg-white bg-opacity-20 rounded-lg p-3">4. Phát triển con người toàn diện vvăn hóa</div>
+            <div class="bg-white bg-opacity-20 rounded-lg p-3">5. Quản lphát triển xhội nghiêm minh</div>
+            <div class="bg-white bg-opacity-20 rounded-lg p-3">6. Thích ứng biến đổi khhậu, kinh txanh</div>
+            <div class="bg-white bg-opacity-20 rounded-lg p-3">7. Bảo vvững chắc Tquốc</div>
+            <div class="bg-white bg-opacity-20 rounded-lg p-3">8. Hội nhập quốc tsâu rộng</div>
+            <div class="bg-white bg-opacity-20 rounded-lg p-3">9. Phát huy dân chXHCN</div>
+            <div class="bg-white bg-opacity-20 rounded-lg p-3">10. Xây dựng Nhnước pháp quyền</div>
+            <div class="bg-white bg-opacity-20 rounded-lg p-3">11. Xây dựng Đảng trong sạch vững mạnh</div>
+            <div class="bg-white bg-opacity-20 rounded-lg p-3">12. Nắm vững 10 mối quan hlớn</div>
+          </div>
+        </div>
+      `
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-50 py-8 animate-fade-in">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12 animate-slide-down">
+          <h1 className="text-5xl sm:text-6xl font-bold text-red-600 mb-6">
+            Bài Học
+          </h1>
+          <p className="text-2xl text-gray-700">
+            Khám phkiến thức vnền kinh tthtrường định hướng XHCN
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-4 gap-8">
+          {/* Sidebar Navigation */}
+          <div className="lg:col-span-1">
+            <div className="bg-white rounded-lg shadow-lg p-6 sticky top-20">
+              <h2 className="text-xl font-bold mb-6 text-red-600">Mục Lục</h2>
+              <nav className="space-y-3">
+                {sections.map((section, index) => (
+                  <button
+                    key={section.id}
+                    onClick={() => setActiveSection(index)}
+                    className={`w-full text-left px-4 py-4 rounded-lg transition-all duration-300 flex items-center space-x-3 text-lg ${
+                      activeSection === index
+                        ? 'bg-blue-600 text-white shadow-md transform scale-105'
+                        : 'hover:bg-blue-50 text-gray-700 border-2 border-transparent hover:border-blue-200'
+                    }`}
+                  >
+                    <span className="text-2xl">{section.icon}</span>
+                    <span className="font-semibold">{section.title}</span>
+                  </button>
+                ))}
+              </nav>
+            </div>
+          </div>
+
+          {/* Main Content */}
+          <div className="lg:col-span-3">
+            <div className="bg-white rounded-lg shadow-lg p-10 animate-slide-up">
+              <h2 className="text-4xl font-bold text-blue-600 mb-8">
+                {sections[activeSection].title}
+              </h2>
+              
+              <div 
+                className="prose prose-lg max-w-none learn-page"
+                dangerouslySetInnerHTML={{ __html: sections[activeSection].content }}
+              />
+
+              {/* Navigation Buttons */}
+              <div className="flex justify-between mt-10 pt-8 border-t-2 border-gray-200">
+                <button
+                  onClick={() => setActiveSection(Math.max(0, activeSection - 1))}
+                  disabled={activeSection === 0}
+                  className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 ${
+                    activeSection === 0
+                      ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                      : 'bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 shadow-lg'
+                  }`}
+                >
+                  Trước
+                </button>
+                <button
+                  onClick={() => setActiveSection(Math.min(sections.length - 1, activeSection + 1))}
+                  disabled={activeSection === sections.length - 1}
+                  className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 ${
+                    activeSection === sections.length - 1
+                      ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                      : 'bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 shadow-lg'
+                  }`}
+                >
+                  Tiếp </button>
+              </div>
+            </div>
+
+            {/* Progress Indicator */}
+            <div className="mt-6 bg-white rounded-lg shadow-lg p-6">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-lg font-bold text-gray-700">Tiến đhọc tập</span>
+                <span className="text-lg font-bold text-blue-600">
+                  {activeSection + 1} / {sections.length}
+                </span>
+              </div>
+              <div className="w-full bg-gray-200 rounded-full h-4">
+                <div
+                  className="bg-blue-600 h-4 rounded-full transition-all duration-500"
+                  style={{ width: `${((activeSection + 1) / sections.length) * 100}%` }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Learn;

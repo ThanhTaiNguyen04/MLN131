@@ -1,0 +1,1663 @@
+import React, { useState } from 'react';
+
+function Learn() {
+  const [activeSection, setActiveSection] = useState(0);
+
+  const sections = [
+    {
+      id: 1,
+      title: 'Điểm Xuất Phát',
+      content: `
+        <div class="relative bg-white border-l-8 border-red-600 shadow-xl rounded-lg p-6 mb-8 hover:shadow-2xl transition-all">
+          <div class="absolute -left-6 top-4 bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold shadow-lg">
+            1
+          </div>
+          <h3 class="text-3xl font-bold text-gray-900 ml-8">Điểm Xuất Phát: <span class="text-red-600">Thấp, Phức Tạp và Nhiều Hệ Lụy Lịch Sử</span></h3>
+        </div>
+        
+        <!-- Hình ảnh minh họa lịch sử -->
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="relative overflow-hidden rounded-lg shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1555883005-5f3c51aca2d3?w=800&q=80" 
+              alt="Nông nghiệp truyền thống Việt Nam"
+              class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+              <p class="text-white font-semibold">Nền nông nghiệp lạc hậu - điểm xuất phát</p>
+            </div>
+          </div>
+          <div class="relative overflow-hidden rounded-lg shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" 
+              alt="Từ chiến tranh đến phát triển"
+              class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+              <p class="text-white font-semibold">Khắc phục hậu quả chiến tranh</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-orange-500 p-6 mb-6 rounded-lg">
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Việt Nam bước vào thời kỳ quá độ từ một <strong>nền kinh tế thuộc địa, nửa phong kiến</strong> với 
+            những đặc điểm mang tính quyết định đến toàn bộ quá trình xây dựng chủ nghĩa xã hội.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <h4 class="text-xl font-bold text-blue-700 mb-4">
+              1. Xuất Phát Từ Xã Hội Thuộc Địa, Nửa Phong Kiến
+            </h4>
+            <div class="space-y-3 text-gray-700">
+              <p class="font-semibold mb-3">Việt Nam bước vào thời kỳ quá độ từ:</p>
+              <ul class="space-y-2 ml-6">
+                <li class="flex items-start">
+                  <span class="text-blue-600 font-bold mr-2 mt-1">•</span>
+                  <span>Nền kinh tế mang đặc trưng <strong>nông nghiệp lạc hậu</strong>, sản xuất nhỏ là chủ yếu</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 font-bold mr-2 mt-1">•</span>
+                  <span><strong>Lực lượng sản xuất còn thấp kém</strong>, cơ sở vật chất - kỹ thuật nghèo nàn</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 font-bold mr-2 mt-1">•</span>
+                  <span>Giai cấp công nhân còn <strong>non yếu</strong>, tư sản dân tộc chưa phát triển đủ mạnh</span>
+                </li>
+              </ul>
+              <div class="bg-blue-50 p-4 rounded-lg mt-4">
+                <p class="font-semibold text-blue-800">Hệ quả:</p>
+                <p class="text-gray-700 mt-2">
+                  Thời kỳ quá độ tất yếu phải <strong>kéo dài</strong>, vì Việt Nam không có 
+                  <em>"bệ phóng công nghiệp tư bản"</em> như các nước phương Tây từng trải qua.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-red-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <h4 class="text-xl font-bold text-red-700 mb-4">
+              2. Hậu Quả Nặng Nề Của Chiến Tranh
+            </h4>
+            <div class="space-y-3 text-gray-700">
+              <p class="font-semibold mb-3">Hàng chục năm chiến tranh liên tiếp để lại hệ lụy sâu sắc:</p>
+              <ul class="space-y-2 ml-6">
+                <li class="flex items-start">
+                  <span class="text-red-600 font-bold mr-2 mt-1">•</span>
+                  <span>Hạ tầng kinh tế bị <strong>tàn phá</strong></span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 font-bold mr-2 mt-1">•</span>
+                  <span>Nguồn nhân lực <strong>tổn thất lớn</strong></span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 font-bold mr-2 mt-1">•</span>
+                  <span>Môi trường xã hội chịu nhiều <strong>biến động</strong></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-green-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <h4 class="text-xl font-bold text-green-700 mb-4">
+              3. Ý Nghĩa Lịch Sử
+            </h4>
+            <div class="space-y-3 text-gray-700">
+              <p class="font-semibold mb-3">Điểm xuất phát này quyết định:</p>
+              <ul class="space-y-2 ml-6">
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2 mt-1">•</span>
+                  <span>Con đường phát triển <strong>đặc thù</strong> của Việt Nam</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2 mt-1">•</span>
+                  <span>Thời gian xây dựng CNXH sẽ <strong>lâu dài</strong></span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2 mt-1">•</span>
+                  <span>Cần <strong>sáng tạo</strong> trong vận dụng lý luận</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-5 mt-6">
+          <p class="font-bold text-yellow-900 mb-2">Kết luận:</p>
+          <p class="text-gray-800 leading-relaxed">
+            Xuất phát điểm thấp, phức tạp nhưng đây chính là thực tế khách quan. 
+            Đây là nền tảng để xác định con đường <em>"bỏ qua chế độ tư bản chủ nghĩa"</em> 
+            đi thẳng lên chủ nghĩa xã hội.
+          </p>
+        </div>
+      `
+    },
+    
+    {
+      id: 2,
+      title: 'Bối Cảnh Thời Đại',
+      content: `
+        <div class="relative bg-white border-l-8 border-blue-600 shadow-xl rounded-lg p-6 mb-8 hover:shadow-2xl transition-all">
+          <div class="absolute -left-6 top-4 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold shadow-lg">
+            2
+          </div>
+          <h3 class="text-3xl font-bold text-gray-900 ml-8">Bối Cảnh Thời Đại: <span class="text-blue-600">Thuận Lợi và Khó Khăn Đan Xen</span></h3>
+        </div>
+
+        <!-- Hình ảnh minh họa bối cảnh -->
+        <div class="grid md:grid-cols-3 gap-4 mb-6">
+          <div class="relative overflow-hidden rounded-lg shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" 
+              alt="Toàn cầu hóa và hội nhập"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/80 to-transparent p-3">
+              <p class="text-white font-semibold text-sm">Toàn cầu hóa</p>
+            </div>
+          </div>
+          <div class="relative overflow-hidden rounded-lg shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1535378620166-273708d44e4c?w=800&q=80" 
+              alt="Công nghệ 4.0"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/80 to-transparent p-3">
+              <p class="text-white font-semibold text-sm">Cách mạng 4.0</p>
+            </div>
+          </div>
+          <div class="relative overflow-hidden rounded-lg shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" 
+              alt="Phát triển đô thị"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/80 to-transparent p-3">
+              <p class="text-white font-semibold text-sm">Đô thị hóa</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-300 rounded-xl p-6 mb-6 shadow-lg">
+          <h4 class="text-2xl font-bold text-green-700 mb-5">
+            Những Thuận Lợi Từ Bối Cảnh Thế Giới
+          </h4>
+          <div class="space-y-4">
+            <div class="bg-white p-4 rounded-lg">
+              <h5 class="font-bold text-green-800 mb-2">1. Xu thế hòa bình và hợp tác</h5>
+              <p class="text-gray-700">
+                Sau Chiến tranh Lạnh, thế giới chuyển sang giai đoạn <strong>hòa bình, ổn định</strong>, 
+                tạo điều kiện cho các nước phát triển kinh tế.
+              </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg">
+              <h5 class="font-bold text-green-800 mb-2">2. Cách mạng khoa học công nghệ</h5>
+              <p class="text-gray-700 mb-3">
+                Cách mạng công nghiệp 4.0 với những thành tựu đột phá:
+              </p>
+              <ul class="ml-6 space-y-1 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">▪</span>
+                  <span>Trí tuệ nhân tạo (AI)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">▪</span>
+                  <span>Internet vạn vật (IoT)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">▪</span>
+                  <span>Công nghệ thông tin và dữ liệu lớn</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">▪</span>
+                  <span>Tự động hóa và robot</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg">
+              <h5 class="font-bold text-green-800 mb-2">3. Hội nhập kinh tế quốc tế</h5>
+              <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">▪</span>
+                  <span>Gia nhập WTO (2007)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">▪</span>
+                  <span>Tham gia CPTPP</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">▪</span>
+                  <span>Ký kết EVFTA (Việt Nam - EU)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 font-bold mr-2">▪</span>
+                  <span>Mở rộng thị trường xuất khẩu, thu hút FDI chất lượng cao</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-300 rounded-xl p-6 mb-6 shadow-lg">
+          <h4 class="text-2xl font-bold text-red-700 mb-5">
+            Những Thách Thức và Khó Khăn
+          </h4>
+          <div class="space-y-4">
+            <div class="bg-white p-4 rounded-lg">
+              <h5 class="font-bold text-red-800 mb-2">1. Sự suy tàn của CNXH hiện thực</h5>
+              <p class="text-gray-700">
+                Liên Xô và các nước XHCN Đông Âu tan rã (1989-1991) tạo <strong>áp lực tư tưởng</strong> lớn.
+              </p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg">
+              <h5 class="font-bold text-purple-700 mb-3">2. Chống phá về chính trị, kinh tế và tư tưởng</h5>
+              <ul class="text-gray-700 space-y-2 ml-4">
+                <li class="flex items-start">
+                  <span class="text-red-600 font-bold mr-2">▪</span>
+                  <span>Các thế lực thù địch xuyên tạc đường lối của Đảng</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 font-bold mr-2">▪</span>
+                  <span>Kích động biểu tình, bạo loạn, chia rẽ nội bộ</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 font-bold mr-2">▪</span>
+                  <span>Tấn công mạng, chiến tranh thông tin</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg">
+              <h5 class="font-bold text-orange-700 mb-2">3. Cạnh tranh kinh tế gay gắt</h5>
+              <p class="text-gray-700 mb-2">
+                Xu thế phát triển không tuyến tính
+              </p>
+              <ul class="text-sm text-gray-600 ml-4 space-y-1">
+                <li class="flex items-start">
+                  <span class="text-orange-600 font-bold mr-2">▪</span>
+                  <span>Các nước có thể <strong>"nhảy cóc"</strong> vượt qua giai đoạn công nghiệp hóa truyền thống</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-orange-600 font-bold mr-2">▪</span>
+                  <span>Nhờ công nghệ cao, AI, tự động hóa</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-orange-600 font-bold mr-2">▪</span>
+                  <span>Nhưng cũng đối mặt nguy cơ <strong>tụt hậu</strong> nếu không đổi mới</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl border-2 border-blue-300">
+          <h4 class="text-xl font-bold text-blue-800 mb-4">
+            Kết Luận: Vừa Khó Khăn, Vừa Thuận Lợi
+          </h4>
+          <p class="text-gray-800 leading-relaxed mb-4">
+            Bối cảnh thời đại đặt ra cả <strong>cơ hội lớn</strong> và <strong>thách thức nghiêm trọng</strong>. 
+            Việt Nam cần:
+          </p>
+          <ul class="space-y-2 ml-6 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-blue-600 font-bold mr-2 text-lg">✓</span>
+              <span>Tận dụng thành tựu khoa học công nghệ</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 font-bold mr-2 text-lg">✓</span>
+              <span>Giữ vững định hướng xã hội chủ nghĩa</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 font-bold mr-2 text-lg">✓</span>
+              <span>Chống lại các âm mưu chống phá</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 font-bold mr-2 text-lg">✓</span>
+              <span>Phát huy nội lực, hội nhập quốc tế</span>
+            </li>
+          </ul>
+        </div>
+      `
+    },
+    
+    {
+      id: 3,
+      title: 'Ý Nghĩa "Bỏ Qua TBCN"',
+      content: `
+        <div class="relative bg-white border-l-8 border-purple-600 shadow-xl rounded-lg p-6 mb-8 hover:shadow-2xl transition-all">
+          <div class="absolute -left-6 top-4 bg-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold shadow-lg">
+            3
+          </div>
+          <h3 class="text-3xl font-bold text-gray-900 ml-8">Ý Nghĩa Của Việc <span class="text-purple-600">"Bỏ Qua Chế Độ Tư Bản Chủ Nghĩa"</span></h3>
+        </div>
+
+        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl mb-6 border-l-4 border-blue-500">
+          <p class="text-lg text-gray-700 leading-relaxed">
+            <strong>"Bỏ qua chế độ tư bản chủ nghĩa"</strong> không có nghĩa là bỏ qua những thành tựu, 
+            kinh nghiệm quý báu mà nhân loại đã tạo ra trong giai đoạn phát triển tư bản chủ nghĩa.
+          </p>
+        </div>
+
+        <!-- Visual Diagram: Bypassing Capitalism Path -->
+        <div class="mb-8 bg-gradient-to-br from-purple-50 to-blue-50 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold text-center text-gray-900 mb-6">Con Đường Phát Triển Của Việt Nam</h4>
+          <div class="flex items-center justify-center gap-2 md:gap-6 flex-wrap">
+            <div class="bg-amber-100 border-2 border-amber-400 p-4 rounded-lg text-center w-32">
+              <p class="font-bold text-amber-800">Phong Kiến</p>
+              <p class="text-xs text-gray-600 mt-1">Trước 1945</p>
+            </div>
+            <div class="text-2xl text-gray-400">→</div>
+            <div class="relative">
+              <div class="bg-gray-200 border-2 border-dashed border-gray-400 p-4 rounded-lg text-center w-32 opacity-50">
+                <p class="font-bold text-gray-600 line-through">Tư Bản</p>
+                <p class="text-xs text-gray-500 mt-1">Bỏ qua</p>
+              </div>
+              <div class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-xl font-bold">×</div>
+            </div>
+            <div class="text-2xl text-blue-600 font-bold">⤴</div>
+            <div class="bg-red-100 border-2 border-red-400 p-4 rounded-lg text-center w-32">
+              <p class="font-bold text-red-800">Xã Hội Chủ Nghĩa</p>
+              <p class="text-xs text-gray-600 mt-1">Từ 1945</p>
+            </div>
+          </div>
+          <p class="text-center text-sm text-gray-600 mt-4 italic">
+            Việt Nam chuyển thẳng từ chế độ phong kiến sang xây dựng chủ nghĩa xã hội, 
+            bỏ qua giai đoạn tư bản chủ nghĩa
+          </p>
+        </div>
+
+        <!-- Visual Grid: 4 Core Meanings -->
+        <div class="mb-8 grid md:grid-cols-2 gap-4">
+          <div class="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-400 p-6 rounded-xl shadow-md">
+            <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl mb-3">1</div>
+            <h5 class="font-bold text-green-800 mb-2">Bỏ Qua Chế Độ Chính Trị Tư Sản</h5>
+            <p class="text-sm text-gray-700">Xây dựng nhà nước pháp quyền XHCN ngay từ đầu</p>
+          </div>
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-400 p-6 rounded-xl shadow-md">
+            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mb-3">2</div>
+            <h5 class="font-bold text-blue-800 mb-2">Bỏ Qua Chế Độ Kinh Tế Tư Bản Thuần Túy</h5>
+            <p class="text-sm text-gray-700">Phát triển kinh tế thị trường định hướng XHCN</p>
+          </div>
+          <div class="bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-400 p-6 rounded-xl shadow-md">
+            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl mb-3">3</div>
+            <h5 class="font-bold text-purple-800 mb-2">Tiếp Thu Thành Tựu Nhân Loại</h5>
+            <p class="text-sm text-gray-700">Học hỏi khoa học công nghệ và kinh nghiệm quản lý</p>
+          </div>
+          <div class="bg-gradient-to-br from-amber-50 to-amber-100 border-2 border-amber-400 p-6 rounded-xl shadow-md">
+            <div class="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold text-xl mb-3">4</div>
+            <h5 class="font-bold text-amber-800 mb-2">Bản Chất Khác Biệt Căn Bản</h5>
+            <p class="text-sm text-gray-700">Thị trường là công cụ, không quyết định bản chất</p>
+          </div>
+        </div>
+
+        <!-- Images: Technology Transfer and International Integration -->
+        <div class="mb-8 grid md:grid-cols-3 gap-4">
+          <div class="relative rounded-lg overflow-hidden shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600" 
+              alt="Advanced Technology"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold">Tiếp Thu Công Nghệ</p>
+            </div>
+          </div>
+          <div class="relative rounded-lg overflow-hidden shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600" 
+              alt="International Cooperation"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold">Hợp Tác Quốc Tế</p>
+            </div>
+          </div>
+          <div class="relative rounded-lg overflow-hidden shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600" 
+              alt="Modern Economy"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold">Kinh Tế Hiện Đại</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white border-l-4 border-green-500 p-6 rounded-r-lg shadow-md">
+            <h4 class="text-xl font-bold text-green-700 mb-3">1. Bỏ Qua Chế Độ Chính Trị Tư Sản</h4>
+            <p class="text-gray-700 mb-3">
+              <strong>Không thiết lập</strong> chế độ độc tài giai cấp tư sản, quyền lực thuộc về giai cấp tư bản,
+              bóc lột giai cấp công nhân.
+            </p>
+            <p class="text-gray-700 mb-3">
+              <strong>Mà xây dựng ngay</strong> nhà nước pháp quyền xã hội chủ nghĩa của nhân dân, do nhân dân, vì nhân dân.
+            </p>
+            <div class="bg-green-50 p-4 rounded-lg mt-3">
+              <p class="font-semibold text-green-800 mb-2">Đặc điểm:</p>
+              <ul class="space-y-1 ml-4 text-gray-700">
+                <li>Quyền lực thuộc về nhân dân</li>
+                <li>Đảng Cộng sản Việt Nam lãnh đạo</li>
+                <li>Dân chủ xã hội chủ nghĩa, không phải dân chủ hình thức tư sản</li>
+                <li>Nhà nước pháp quyền đại diện lợi ích của đại đa số nhân dân lao động</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-white border-l-4 border-blue-500 p-6 rounded-r-lg shadow-md">
+            <h4 class="text-xl font-bold text-blue-700 mb-3">2. Bỏ Qua Chế Độ Kinh Tế Tư Bản Thuần Túy</h4>
+            <p class="text-gray-700 mb-3">
+              <strong>Không xây dựng</strong> nền kinh tế thị trường tư bản với chủ nghĩa tư bản tư hữu, 
+              tư nhân chiếm lĩnh mọi lĩnh vực, người lao động bị bóc lột.
+            </p>
+            <p class="text-gray-700 mb-3">
+              <strong>Mà phát triển</strong> nền kinh tế thị trường <strong>định hướng xã hội chủ nghĩa</strong>.
+            </p>
+            <div class="bg-blue-50 p-4 rounded-lg mt-3">
+              <p class="font-semibold text-blue-800 mb-2">Nguyên tắc cốt lõi:</p>
+              <div class="space-y-3">
+                <div class="bg-white p-3 rounded">
+                  <p class="font-semibold text-gray-800 mb-1">Nhiều hình thức sở hữu</p>
+                  <p class="text-sm text-gray-600">
+                    Sở hữu nhà nước, sở hữu tập thể, sở hữu tư nhân, sở hữu hỗn hợp
+                  </p>
+                </div>
+                <div class="bg-white p-3 rounded">
+                  <p class="font-semibold text-gray-800 mb-1">Nhiều thành phần kinh tế</p>
+                  <p class="text-sm text-gray-600">
+                    Kinh tế nhà nước, tập thể, tư nhân, cá thể, FDI cùng phát triển
+                  </p>
+                </div>
+                <div class="bg-white p-3 rounded">
+                  <p class="font-semibold text-gray-800 mb-1">Vai trò kinh tế nhà nước</p>
+                  <p class="text-sm text-gray-600">
+                    Giữ vai trò chủ đạo, nắm giữ các ngành then chốt
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-l-4 border-purple-500 p-6 rounded-r-lg shadow-md">
+            <h4 class="text-xl font-bold text-purple-700 mb-3">3. Tiếp Thu Có Chọn Lọc Thành Tựu Của Nhân Loại</h4>
+            <p class="text-gray-700 mb-4">
+              Việt Nam <strong>học hỏi và vận dụng sáng tạo</strong> những thành tựu tiến bộ:
+            </p>
+            
+            <div class="space-y-3">
+              <div class="border-l-4 border-purple-400 pl-4 bg-purple-50 p-3 rounded-r">
+                <h5 class="font-bold text-purple-800 mb-2">Khoa học công nghệ</h5>
+                <ul class="text-sm text-gray-700 ml-4 space-y-1">
+                  <li class="flex items-start">
+                    <span class="text-purple-500 font-bold mr-2">▸</span>
+                    <span>Công nghệ thông tin, AI, Big Data</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-purple-500 font-bold mr-2">▸</span>
+                    <span>Công nghệ sinh học, công nghệ nano</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-purple-500 font-bold mr-2">▸</span>
+                    <span>Tự động hóa, robot trong sản xuất</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="border-l-4 border-blue-400 pl-4 bg-blue-50 p-3 rounded-r">
+                <h5 class="font-bold text-blue-800 mb-2">Quản trị doanh nghiệp hiện đại</h5>
+                <div class="grid md:grid-cols-3 gap-2 mt-2">
+                  <div class="bg-white p-2 rounded text-sm">Mô hình công ty cổ phần</div>
+                  <div class="bg-white p-2 rounded text-sm">Thị trường chứng khoán</div>
+                  <div class="bg-white p-2 rounded text-sm">Pháp luật kinh doanh hiện đại</div>
+                </div>
+              </div>
+
+              <div class="border-l-4 border-green-400 pl-4 bg-green-50 p-3 rounded-r">
+                <h5 class="font-bold text-green-800 mb-2">Hội nhập quốc tế</h5>
+                <ul class="text-sm text-gray-700 ml-4 space-y-1">
+                  <li class="flex items-start">
+                    <span class="text-green-500 font-bold mr-2">▸</span>
+                    <span>Tiếp cận thị trường rộng lớn</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-500 font-bold mr-2">▸</span>
+                    <span>Thu hút vốn FDI chất lượng cao</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-500 font-bold mr-2">▸</span>
+                    <span>Nâng cao tiêu chuẩn sản xuất theo chuẩn quốc tế</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-l-4 border-amber-500 p-6 rounded-r-lg shadow-md">
+            <h4 class="text-xl font-bold text-amber-700 mb-3">4. Bản Chất Khác Biệt Căn Bản</h4>
+            <div class="space-y-4">
+              <div class="bg-white p-3 rounded mt-3">
+                <p class="font-semibold text-orange-800">
+                  Cơ chế thị trường được sử dụng như một <strong>công cụ</strong>, 
+                  không quyết định <strong>bản chất chế độ</strong>.
+                </p>
+              </div>
+
+              <div class="bg-amber-50 p-4 rounded-lg">
+                <h5 class="font-bold text-blue-700 mb-3">Quá trình lâu dài, nhiều chặng đường</h5>
+                <p class="text-gray-700 mb-3">
+                  Bỏ qua TBCN là một <strong>quá trình lịch sử lâu dài</strong>, không phải một bước nhảy vọt.
+                </p>
+                <ul class="space-y-2 ml-4 text-gray-700">
+                  <li>Bước ngoặt tiêu biểu: <strong>Đổi mới năm 1986</strong></li>
+                </ul>
+              </div>
+
+              <div class="bg-amber-50 p-4 rounded-lg">
+                <h5 class="font-bold text-green-700 mb-3">Biến đổi trên tất cả các lĩnh vực</h5>
+                <ul class="space-y-2 ml-4 text-gray-700">
+                  <li class="flex items-start">
+                    <span class="text-amber-600 font-bold mr-2">•</span>
+                    <span>Kinh tế: Từ kế hoạch hóa tập trung sang kinh tế thị trường</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-amber-600 font-bold mr-2">•</span>
+                    <span>Chính trị: Xây dựng nhà nước pháp quyền XHCN</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-amber-600 font-bold mr-2">•</span>
+                    <span>Văn hóa - xã hội: Phát triển con người toàn diện</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-amber-600 font-bold mr-2">•</span>
+                    <span>Đối ngoại: Chủ động hội nhập quốc tế</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-400 rounded-xl p-6 mt-6">
+          <h4 class="text-2xl font-bold text-gray-900 mb-4">Tóm Lại</h4>
+          <div class="space-y-3 text-gray-800">
+            <p class="leading-relaxed">
+              <strong>"Bỏ qua chế độ tư bản chủ nghĩa"</strong> có nghĩa là:
+            </p>
+            <ul class="ml-6 space-y-2">
+              <li class="flex items-start">
+                <span class="text-yellow-600 font-bold mr-2 text-lg">✓</span>
+                <span>Bỏ qua <strong>chế độ chính trị</strong> và <strong>chế độ kinh tế</strong> tư bản</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-yellow-600 font-bold mr-2 text-lg">✓</span>
+                <span>Tiếp thu có chọn lọc <strong>thành tựu khoa học công nghệ</strong> và kinh nghiệm quản lý</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-yellow-600 font-bold mr-2 text-lg">✓</span>
+                <span>Xây dựng nền kinh tế thị trường <strong>định hướng xã hội chủ nghĩa</strong></span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-yellow-600 font-bold mr-2 text-lg">✓</span>
+                <span>
+                  <em>Thời kỳ này vẫn còn nhiều hình thức sở hữu, nhiều thành phần kinh tế, 
+                  nhưng bản chất là xã hội chủ nghĩa do vai trò lãnh đạo của Đảng và Nhà nước.</em>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      `
+    },
+
+    {
+      id: 4,
+      title: '8 Đặc Trưng CNXH',
+      content: `
+        <div class="relative bg-white border-l-8 border-green-600 shadow-xl rounded-lg p-6 mb-8 hover:shadow-2xl transition-all">
+          <div class="absolute -left-6 top-4 bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold shadow-lg">
+            4
+          </div>
+          <h3 class="text-3xl font-bold text-gray-900 ml-8"><span class="text-green-600">8 Đặc Trưng</span> Cơ Bản Của Chủ Nghĩa Xã Hội Ở Việt Nam</h3>
+        </div>
+        
+        <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl mb-6 shadow-lg">
+          <p class="text-sm text-gray-600 mb-2">Theo Cương lĩnh (bổ sung, phát triển năm 2011)</p>
+          <p class="font-semibold text-gray-800">8 đặc trưng bản chất định hình mô hình chủ nghĩa xã hội ở Việt Nam</p>
+        </div>
+
+        <!-- Visual Overview: 8 Characteristics Grid -->
+        <div class="mb-8 bg-gradient-to-br from-red-50 via-blue-50 to-green-50 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold text-center text-gray-900 mb-6">Tổng Quan 8 Đặc Trưng</h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
+              <div class="w-12 h-12 bg-red-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold text-xl">1</div>
+              <p class="text-sm font-semibold text-gray-800">Dân Giàu Nước Mạnh</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
+              <div class="w-12 h-12 bg-blue-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold text-xl">2</div>
+              <p class="text-sm font-semibold text-gray-800">Nhân Dân Làm Chủ</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
+              <div class="w-12 h-12 bg-green-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold text-xl">3</div>
+              <p class="text-sm font-semibold text-gray-800">Kinh Tế Phát Triển</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
+              <div class="w-12 h-12 bg-purple-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold text-xl">4</div>
+              <p class="text-sm font-semibold text-gray-800">Văn Hóa Tiên Tiến</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
+              <div class="w-12 h-12 bg-yellow-500 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold text-xl">5</div>
+              <p class="text-sm font-semibold text-gray-800">Con Người Toàn Diện</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
+              <div class="w-12 h-12 bg-green-600 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold text-xl">6</div>
+              <p class="text-sm font-semibold text-gray-800">Dân Tộc Đoàn Kết</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
+              <div class="w-12 h-12 bg-blue-600 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold text-xl">7</div>
+              <p class="text-sm font-semibold text-gray-800">Nhà Nước Pháp Quyền</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
+              <div class="w-12 h-12 bg-red-600 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold text-xl">8</div>
+              <p class="text-sm font-semibold text-gray-800">Đảng Lãnh Đạo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Images: Socialist Characteristics -->
+        <div class="mb-8 grid md:grid-cols-3 gap-4">
+          <div class="relative rounded-lg overflow-hidden shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=600" 
+              alt="Modern Vietnam Democracy"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold">Nhân Dân Làm Chủ</p>
+            </div>
+          </div>
+          <div class="relative rounded-lg overflow-hidden shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1496096265110-f83ad7f96608?w=600" 
+              alt="Cultural Heritage Vietnam"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold">Văn Hóa Tiên Tiến</p>
+            </div>
+          </div>
+          <div class="relative rounded-lg overflow-hidden shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1517245386807-9f6d85e3b08c?w=600" 
+              alt="Unity and Cooperation"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold">Đoàn Kết Cùng Phát Triển</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white border-2 border-red-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-red-700 mb-2">1. Dân Giàu, Nước Mạnh, Dân Chủ, Công Bằng, Văn Minh</h4>
+                <p class="text-gray-600 text-sm italic">Mục tiêu tổng quát — kết tinh giữa mục tiêu kinh tế, chính trị và giá trị nhân văn</p>
+              </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-4 mb-4">
+              <div class="bg-red-50 p-4 rounded-lg">
+                <p class="font-bold text-red-800 mb-2">Dân Giàu</p>
+                <p class="text-sm text-gray-700">Thu nhập cao, đời sống ấm no, hạnh phúc</p>
+              </div>
+              
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <p class="font-bold text-blue-800 mb-2">Nước Mạnh</p>
+                <p class="text-sm text-gray-700">Kinh tế phát triển, quốc phòng an ninh vững chắc</p>
+              </div>
+              
+              <div class="bg-green-50 p-4 rounded-lg">
+                <p class="font-bold text-green-800 mb-2">Văn Minh</p>
+                <p class="text-sm text-gray-700">Văn hóa tiên tiến, đạo đức tốt đẹp, con người phát triển toàn diện</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-blue-700 mb-2">2. Nhân Dân Làm Chủ</h4>
+                <p class="text-gray-600 text-sm italic">Quyền lực nhà nước thuộc về nhân dân, do nhân dân, vì nhân dân</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h5 class="font-bold text-blue-800 mb-2">Cơ sở hiến định</h5>
+                <p class="text-gray-700 text-sm">
+                  <strong>Hiến pháp 2013</strong> - Điều 2: "Quyền lực nhà nước là thống nhất, 
+                  có sự phân công, phối hợp, kiểm soát giữa các cơ quan nhà nước trong việc thực hiện 
+                  các quyền lập pháp, hành pháp, tư pháp."
+                </p>
+              </div>
+
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h5 class="font-bold text-blue-800 mb-2">Thực hiện quyền làm chủ</h5>
+                <div class="grid md:grid-cols-2 gap-3 mt-3">
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-blue-700 mb-1">Chính trị</p>
+                    <p class="text-xs text-gray-600">Bầu cử, ứng cử, giám sát</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-blue-700 mb-1">Kinh tế</p>
+                    <p class="text-xs text-gray-600">Sở hữu, quản lý tài sản công</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-blue-700 mb-1">Văn hóa</p>
+                    <p class="text-xs text-gray-600">Hưởng thụ và sáng tạo</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-blue-700 mb-1">Xã hội</p>
+                    <p class="text-xs text-gray-600">Y tế, giáo dục, phúc lợi</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-green-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-green-700 mb-2">3. Nền Kinh Tế Phát Triển Cao Dựa Trên Lực Lượng Sản Xuất Hiện Đại và Quan Hệ Sản Xuất Tiến Bộ</h4>
+                <p class="text-gray-600 text-sm italic">Phát triển toàn diện, bền vững, lấy con người làm trung tâm</p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-green-50 p-4 rounded-lg">
+                <p class="font-bold text-green-800 mb-3">Lực Lượng Sản Xuất Hiện Đại</p>
+                <ul class="text-sm text-gray-700 space-y-2 ml-4">
+                  <li>Khoa học công nghệ tiên tiến</li>
+                  <li>Nguồn nhân lực chất lượng cao</li>
+                  <li>Hạ tầng hiện đại đồng bộ</li>
+                </ul>
+              </div>
+
+              <div class="bg-green-50 p-4 rounded-lg">
+                <p class="font-bold text-green-800 mb-3">Quan Hệ Sản Xuất Phù Hợp</p>
+                <ul class="text-sm text-gray-700 space-y-2 ml-4">
+                  <li>Nhiều hình thức sở hữu</li>
+                  <li>Phân phối theo lao động và hiệu quả</li>
+                  <li>Hợp tác cùng phát triển</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-purple-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-purple-700 mb-2">4. Văn Hóa Tiên Tiến, Đậm Đà Bản Sắc Dân Tộc</h4>
+                <p class="text-gray-600 text-sm italic">Văn hóa là nền tảng tinh thần của xã hội</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <h5 class="font-bold text-purple-800 mb-2">Đặc điểm văn hóa XHCN Việt Nam</h5>
+                <div class="grid md:grid-cols-2 gap-3 mt-3">
+                  <div class="border-l-4 border-purple-500 pl-3">
+                    <p class="font-semibold text-sm text-purple-700 mb-1">Tiên tiến</p>
+                    <p class="text-xs text-gray-600">Hấp thụ tinh hoa văn hóa nhân loại</p>
+                  </div>
+                  <div class="border-l-4 border-blue-500 pl-3">
+                    <p class="font-semibold text-sm text-blue-700 mb-1">Bản sắc</p>
+                    <p class="text-xs text-gray-600">Giữ gìn bản sắc văn hóa dân tộc</p>
+                  </div>
+                  <div class="border-l-4 border-green-500 pl-3">
+                    <p class="font-semibold text-sm text-green-700 mb-1">Nhân văn</p>
+                    <p class="text-xs text-gray-600">Con người là trung tâm</p>
+                  </div>
+                  <div class="border-l-4 border-red-500 pl-3">
+                    <p class="font-semibold text-sm text-red-700 mb-1">Dân tộc</p>
+                    <p class="text-xs text-gray-600">Đoàn kết 54 dân tộc Việt Nam</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-yellow-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-yellow-700 mb-2">5. Con Người Làm Chủ, Được Giải Phóng, Phát Triển Toàn Diện</h4>
+                <p class="text-gray-600 text-sm italic">Con người vừa là mục tiêu, vừa là động lực phát triển</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-yellow-50 p-4 rounded-lg">
+                <h5 class="font-bold text-yellow-800 mb-3">Giải phóng con người khỏi:</h5>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-gray-800 mb-1">Đói Nghèo</p>
+                    <p class="text-sm text-gray-600">Khỏi đói nghèo, bóc lột</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-gray-800 mb-1">Bạo Lực</p>
+                    <p class="text-sm text-gray-600">Khỏi bạo lực, chiến tranh</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-gray-800 mb-1">Áp Bức</p>
+                    <p class="text-sm text-gray-600">Khỏi áp bức, phân biệt đối xử</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-gray-800 mb-1">Môi Trường</p>
+                    <p class="text-sm text-gray-600">Được sống trong môi trường lành mạnh</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-green-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-green-700 mb-2">6. Các Dân Tộc Bình Đẳng, Đoàn Kết, Giúp Nhau Cùng Phát Triển</h4>
+                <p class="text-gray-600 text-sm italic">54 dân tộc Việt Nam là một gia đình thống nhất</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-green-50 p-4 rounded-lg">
+                <h5 class="font-bold text-green-800 mb-2">Cơ sở hiến định và chính trị</h5>
+                <p class="text-sm text-gray-700 mb-3">
+                  <strong>Hiến pháp 2013 - Điều 5:</strong> "Nước CHXHCN Việt Nam là quốc gia thống nhất 
+                  của các dân tộc cùng sinh sống trên đất nước Việt Nam."
+                </p>
+              </div>
+
+              <div class="bg-green-50 p-4 rounded-lg">
+                <p class="font-bold text-green-800 mb-3">Giúp Nhau Cùng Phát Triển</p>
+                <div class="space-y-3">
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-sm text-green-900 mb-1">Chương trình mục tiêu quốc gia:</p>
+                    <ul class="text-xs text-gray-600 ml-4 space-y-1">
+                      <li>Phát triển KT-XH vùng DTTS</li>
+                      <li>Hạ tầng giao thông, điện</li>
+                      <li>Trường học và trạm y tế</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-blue-700 mb-2">7. Nhà Nước Pháp Quyền XHCN Của Nhân Dân, Do Nhân Dân, Vì Nhân Dân</h4>
+                <p class="text-gray-600 text-sm italic">Do Đảng Cộng sản Việt Nam lãnh đạo</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <p class="font-semibold text-blue-800 mb-3">
+                  Điểm khác biệt căn bản so với mô hình nhà nước pháp quyền tư sản
+                </p>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-white p-3 rounded border-l-4 border-blue-500">
+                    <p class="font-bold text-sm text-blue-800 mb-1">Nhà nước XHCN</p>
+                    <ul class="text-xs text-gray-600 space-y-1 ml-3">
+                      <li>Đại diện lợi ích nhân dân lao động</li>
+                      <li>Đảng Cộng sản lãnh đạo</li>
+                      <li>Quyền lực thuộc về nhân dân</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white p-3 rounded border-l-4 border-red-500">
+                    <p class="font-bold text-sm text-red-800 mb-1">Nhà nước tư sản</p>
+                    <ul class="text-xs text-gray-600 space-y-1 ml-3">
+                      <li>Đại diện giai cấp tư sản</li>
+                      <li>Chính đảng tư sản luân phiên</li>
+                      <li>Dân chủ hình thức, bầu cử tốn kém</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-red-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-red-700 mb-2">8. Đảng Cộng Sản Việt Nam - Đội Tiên Phong, Đại Biểu Trung Thành Lợi Ích Của Giai Cấp Công Nhân, Nhân Dân Lao Động và Dân Tộc - Là Lực Lượng Lãnh Đạo Nhà Nước và Xã Hội</h4>
+                <p class="text-gray-600 text-sm italic">Nguyên tắc lãnh đạo của Đảng là nhân tố quyết định mọi thắng lợi</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-red-50 p-4 rounded-lg">
+                <p class="font-semibold text-red-800 mb-3">Vai trò lãnh đạo của Đảng:</p>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-bold text-sm text-red-700 mb-1">Lãnh đạo chính trị</p>
+                    <p class="text-xs text-gray-600">Xác định đường lối, chủ trương lớn</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-bold text-sm text-red-700 mb-1">Lãnh đạo tư tưởng</p>
+                    <p class="text-xs text-gray-600">Định hướng tư tưởng, lý luận</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-bold text-sm text-red-700 mb-1">Lãnh đạo tổ chức</p>
+                    <p class="text-xs text-gray-600">Xây dựng hệ thống chính trị</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-bold text-sm text-red-700 mb-1">Lãnh đạo con người</p>
+                    <p class="text-xs text-gray-600">Đào tạo, bồi dưỡng cán bộ</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-red-50 to-yellow-50 border-2 border-red-300 rounded-xl p-6 mt-8">
+          <h4 class="text-2xl font-bold text-gray-900 mb-4">Kết Luận</h4>
+          <p class="text-gray-800 leading-relaxed mb-4">
+            <strong>8 đặc trưng</strong> trên tạo thành một hệ thống thống nhất, bổ trợ lẫn nhau, 
+            phản ánh bản chất và đặc điểm của chủ nghĩa xã hội ở Việt Nam trong giai đoạn hiện nay.
+          </p>
+          <p class="text-gray-700 italic">
+            Đây là kim chỉ nam cho toàn bộ công cuộc xây dựng và bảo vệ Tổ quốc Việt Nam xã hội chủ nghĩa.
+          </p>
+        </div>
+      `
+    },
+
+    {
+      id: 5,
+      title: '8 Phương Hướng',
+      content: `
+        <div class="relative bg-white border-l-8 border-amber-600 shadow-xl rounded-lg p-6 mb-8 hover:shadow-2xl transition-all">
+          <div class="absolute -left-6 top-4 bg-amber-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold shadow-lg">
+            5
+          </div>
+          <h3 class="text-3xl font-bold text-gray-900 ml-8"><span class="text-amber-600">8 Phương Hướng</span> Xây Dựng Chủ Nghĩa Xã Hội Ở Việt Nam</h3>
+        </div>
+        
+        <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl mb-6 shadow-lg border-2 border-blue-200">
+          <p class="text-gray-800 leading-relaxed">
+            <strong>Mối quan hệ giữa Đặc trưng và Phương hướng:</strong> 
+            Nếu 8 đặc trưng trả lời câu hỏi <em>"CNXH Việt Nam là gì?"</em>, 
+            thì 8 phương hướng trả lời <em>"Làm thế nào để xây dựng CNXH?"</em>
+          </p>
+        </div>
+
+        <!-- Visual Overview: 8 Directions Grid -->
+        <div class="mb-8 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold text-center text-gray-900 mb-6">Tổng Quan 8 Phương Hướng</h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-blue-500">
+              <div class="w-10 h-10 bg-blue-500 rounded-lg mx-auto mb-2 flex items-center justify-center text-white font-bold">1</div>
+              <p class="text-xs font-semibold text-gray-800 text-center">Kinh Tế Tri Thức</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-green-500">
+              <div class="w-10 h-10 bg-green-500 rounded-lg mx-auto mb-2 flex items-center justify-center text-white font-bold">2</div>
+              <p class="text-xs font-semibold text-gray-800 text-center">Kinh Tế Thị Trường ĐHXHCN</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-purple-500">
+              <div class="w-10 h-10 bg-purple-500 rounded-lg mx-auto mb-2 flex items-center justify-center text-white font-bold">3</div>
+              <p class="text-xs font-semibold text-gray-800 text-center">Văn Hóa & Công Bằng XH</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-red-500">
+              <div class="w-10 h-10 bg-red-500 rounded-lg mx-auto mb-2 flex items-center justify-center text-white font-bold">4</div>
+              <p class="text-xs font-semibold text-gray-800 text-center">Bảo Vệ Môi Trường</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-yellow-500">
+              <div class="w-10 h-10 bg-yellow-600 rounded-lg mx-auto mb-2 flex items-center justify-center text-white font-bold">5</div>
+              <p class="text-xs font-semibold text-gray-800 text-center">Quốc Phòng An Ninh</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-blue-600">
+              <div class="w-10 h-10 bg-blue-600 rounded-lg mx-auto mb-2 flex items-center justify-center text-white font-bold">6</div>
+              <p class="text-xs font-semibold text-gray-800 text-center">Hội Nhập Quốc Tế</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-green-600">
+              <div class="w-10 h-10 bg-green-600 rounded-lg mx-auto mb-2 flex items-center justify-center text-white font-bold">7</div>
+              <p class="text-xs font-semibold text-gray-800 text-center">Dân Chủ XHCN</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-red-600">
+              <div class="w-10 h-10 bg-red-600 rounded-lg mx-auto mb-2 flex items-center justify-center text-white font-bold">8</div>
+              <p class="text-xs font-semibold text-gray-800 text-center">Xây Dựng Đảng</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Images: Key Directions -->
+        <div class="mb-8 grid md:grid-cols-3 gap-4">
+          <div class="relative rounded-lg overflow-hidden shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600" 
+              alt="Knowledge Economy"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold">Kinh Tế Tri Thức</p>
+            </div>
+          </div>
+          <div class="relative rounded-lg overflow-hidden shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=600" 
+              alt="Environmental Protection"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold">Bảo Vệ Môi Trường</p>
+            </div>
+          </div>
+          <div class="relative rounded-lg overflow-hidden shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600" 
+              alt="International Integration"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold">Hội Nhập Quốc Tế</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-blue-700 mb-2">1. Phát Triển Nhanh, Bền Vững Nền Kinh Tế Tri Thức</h4>
+                <p class="text-gray-600 text-sm italic">Dựa trên khoa học công nghệ và đổi mới sáng tạo</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h5 class="font-bold text-blue-800 mb-3">Nội dung cốt lõi:</h5>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-gray-800 mb-1">Kinh Tế Tri Thức</p>
+                    <p class="text-sm text-gray-600">Khoa học công nghệ là động lực chính</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-gray-800 mb-1">Tăng Trưởng Xanh</p>
+                    <p class="text-sm text-gray-600">Bảo vệ môi trường, tiết kiệm tài nguyên</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-gray-800 mb-1">Phát Triển Bền Vững</p>
+                    <p class="text-sm text-gray-600">Hài hòa kinh tế - xã hội - môi trường</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-gray-800 mb-1">Đổi Mới Sáng Tạo</p>
+                    <p class="text-sm text-gray-600">Khuyến khích startup, nghiên cứu</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-green-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-green-700 mb-2">2. Phát Triển Nền Kinh Tế Thị Trường Định Hướng XHCN Đồng Bộ, Hiện Đại</h4>
+                <p class="text-gray-600 text-sm italic">Nhiều thành phần kinh tế, kinh tế nhà nước giữ vai trò chủ đạo</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-green-50 p-4 rounded-lg">
+                <h5 class="font-bold text-green-800 mb-3">Nhiều Thành Phần Kinh Tế</h5>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                  <div class="bg-white p-2 rounded text-center text-sm">Kinh tế nhà nước</div>
+                  <div class="bg-white p-2 rounded text-center text-sm">Kinh tế tập thể</div>
+                  <div class="bg-white p-2 rounded text-center text-sm">Kinh tế tư nhân</div>
+                  <div class="bg-white p-2 rounded text-center text-sm">Kinh tế cá thể</div>
+                  <div class="bg-white p-2 rounded text-center text-sm">Kinh tế FDI</div>
+                  <div class="bg-white p-2 rounded text-center text-sm">Kinh tế hỗn hợp</div>
+                </div>
+              </div>
+
+              <div class="bg-green-50 p-4 rounded-lg">
+                <p class="font-semibold text-green-800 mb-2">Vai trò Kinh tế Nhà nước:</p>
+                <div class="grid md:grid-cols-3 gap-2">
+                  <div class="bg-white p-2 rounded text-center text-sm">Quốc phòng</div>
+                  <div class="bg-white p-2 rounded text-center text-sm">An ninh</div>
+                  <div class="bg-white p-2 rounded text-center text-sm">Năng lượng</div>
+                  <div class="bg-white p-2 rounded text-center text-sm">Hạ tầng</div>
+                  <div class="bg-white p-2 rounded text-center text-sm">Tài chính</div>
+                  <div class="bg-white p-2 rounded text-center text-sm">Ngân hàng</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-purple-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-purple-700 mb-2">3. Phát Triển Văn Hóa, Thực Hiện Tiến Bộ, Công Bằng Xã Hội</h4>
+                <p class="text-gray-600 text-sm italic">Con người là trung tâm của phát triển</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <h5 class="font-bold text-purple-800 mb-3">Phát triển văn hóa:</h5>
+                <div class="space-y-2 ml-4">
+                  <div class="flex items-start">
+                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3"></div>
+                    <p class="text-sm text-gray-700">
+                      Giáo Dục
+                      <span class="text-xs text-gray-600 block mt-1">
+                        Phát triển toàn diện, nâng cao chất lượng nguồn nhân lực
+                      </span>
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3"></div>
+                    <p class="text-sm text-gray-700">
+                      Y Tế
+                      <span class="text-xs text-gray-600 block mt-1">
+                        Chăm sóc và bảo vệ sức khỏe nhân dân
+                      </span>
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3"></div>
+                    <p class="text-sm text-gray-700">
+                      Văn Hóa - Thể Thao
+                      <span class="text-xs text-gray-600 block mt-1">
+                        Phát triển toàn diện thể chất và tinh thần
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <p class="font-semibold text-purple-800 mb-2">Thực hiện công bằng xã hội:</p>
+                <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                  <li>Giảm nghèo bền vững</li>
+                  <li>An sinh xã hội toàn diện</li>
+                  <li>Phúc lợi xã hội ngày càng tốt hơn</li>
+                  <li>Thu hẹp khoảng cách giàu nghèo</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-red-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-red-700 mb-2">4. Bảo Vệ Môi Trường, Chủ Động Ứng Phó Biến Đổi Khí Hậu</h4>
+                <p class="text-gray-600 text-sm italic">Phát triển bền vững, hài hòa với thiên nhiên</p>
+              </div>
+            </div>
+
+            <div class="bg-red-50 p-4 rounded-lg">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white p-3 rounded">
+                  <p class="font-semibold text-red-800 mb-2">Bảo vệ môi trường</p>
+                  <ul class="text-sm text-gray-700 space-y-1 ml-3">
+                    <li>Kiểm soát ô nhiễm</li>
+                    <li>Xử lý rác thải</li>
+                    <li>Bảo vệ đa dạng sinh học</li>
+                  </ul>
+                </div>
+                <div class="bg-white p-3 rounded">
+                  <p class="font-semibold text-red-800 mb-2">Ứng phó biến đổi khí hậu</p>
+                  <ul class="text-sm text-gray-700 space-y-1 ml-3">
+                    <li>Giảm phát thải khí nhà kính</li>
+                    <li>Năng lượng tái tạo</li>
+                    <li>Nâng cao khả năng thích ứng</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-yellow-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-yellow-700 mb-2">5. Xây Dựng Nền Quốc Phòng Toàn Dân, An Ninh Nhân Dân</h4>
+                <p class="text-gray-600 text-sm italic">Bảo vệ vững chắc Tổ quốc, giữ vững môi trường hòa bình</p>
+              </div>
+            </div>
+
+            <div class="bg-yellow-50 p-4 rounded-lg">
+              <div class="grid md:grid-cols-2 gap-3">
+                <div class="bg-white p-3 rounded">
+                  <p class="font-semibold text-yellow-800 mb-2">Quốc phòng toàn dân</p>
+                  <p class="text-sm text-gray-600">
+                    Toàn dân tham gia bảo vệ Tổ quốc, kết hợp chặt chẽ quốc phòng với an ninh
+                  </p>
+                </div>
+                <div class="bg-white p-3 rounded">
+                  <p class="font-semibold text-yellow-800 mb-2">An ninh nhân dân</p>
+                  <div class="grid grid-cols-2 gap-1 mt-2 text-xs">
+                    <div class="bg-yellow-50 p-1 rounded text-center">An ninh chính trị</div>
+                    <div class="bg-yellow-50 p-1 rounded text-center">Trật tự an toàn</div>
+                    <div class="bg-yellow-50 p-1 rounded text-center">An ninh biên giới</div>
+                    <div class="bg-yellow-50 p-1 rounded text-center">An ninh mạng</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-blue-700 mb-2">6. Chủ Động, Tích Cực Hội Nhập Quốc Tế</h4>
+                <p class="text-gray-600 text-sm italic">Đối ngoại đa phương hóa, đa dạng hóa</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h5 class="font-bold text-blue-800 mb-3">Nguyên tắc đối ngoại:</h5>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-gray-800 mb-1">Đa Phương Hóa, Đa Dạng Hóa</p>
+                    <p class="text-sm text-gray-600">Kết bạn với tất cả các nước</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-gray-800 mb-1">Độc Lập Tự Chủ</p>
+                    <p class="text-sm text-gray-600">Không phụ thuộc vào nước ngoài</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-gray-800 mb-1">Hợp Tác Cùng Có Lợi</p>
+                    <p class="text-sm text-gray-600">Đôi bên cùng phát triển</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-gray-800 mb-1">Hòa Bình, Hợp Tác</p>
+                    <p class="text-sm text-gray-600">Giải quyết tranh chấp bằng đối thoại</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-green-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-green-700 mb-2">7. Phát Triển Dân Chủ XHCN, Bảo Đảm Quyền Làm Chủ Của Nhân Dân</h4>
+                <p class="text-gray-600 text-sm italic">Dân chủ là bản chất của chế độ xã hội chủ nghĩa</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-green-50 p-4 rounded-lg">
+                <h5 class="font-bold text-green-800 mb-3">Nội dung dân chủ:</h5>
+                <div class="space-y-2 ml-4">
+                  <div class="flex items-start">
+                    <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></div>
+                    <p class="text-sm text-gray-700">
+                      Dân Chủ Trực Tiếp
+                      <span class="text-xs text-gray-600 block mt-1">Trưng cầu dân ý, lấy ý kiến nhân dân</span>
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></div>
+                    <p class="text-sm text-gray-700">
+                      Chuyển Đổi Số
+                      <span class="text-xs text-gray-600 block mt-1">Chính phủ điện tử, công dân số</span>
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></div>
+                    <p class="text-sm text-gray-700">
+                      Cơ Chế Kiểm Soát Quyền Lực
+                      <span class="text-xs text-gray-600 block mt-1">Phân công, phối hợp, kiểm soát quyền lực nhà nước</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-red-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-start mb-4">
+              <div>
+                <h4 class="text-xl font-bold text-red-700 mb-2">8. Xây Dựng Đảng Và Hệ Thống Chính Trị Trong Sạch, Vững Mạnh</h4>
+                <p class="text-gray-600 text-sm italic">Đảng là nhân tố quyết định mọi thắng lợi</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-red-50 p-4 rounded-lg">
+                <h5 class="font-bold text-red-800 mb-3">Xây dựng Đảng:</h5>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-red-700 mb-1">Về chính trị</p>
+                    <p class="text-sm text-gray-600">Kiên định chủ nghĩa Mác - Lênin, tư tưởng Hồ Chí Minh</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-red-700 mb-1">Về tư tưởng</p>
+                    <p class="text-sm text-gray-600">Đấu tranh chống suy thoái, tự diễn biến, tự chuyển hóa</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-red-700 mb-1">Về tổ chức</p>
+                    <p class="text-sm text-gray-600">Xây dựng đội ngũ cán bộ đủ phẩm chất, năng lực</p>
+                  </div>
+                  <div class="bg-white p-3 rounded">
+                    <p class="font-semibold text-red-700 mb-1">Về đạo đức</p>
+                    <p class="text-sm text-gray-600">Chống tham nhũng, lãng phí, tiêu cực</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-red-50 p-4 rounded-lg">
+                <p class="font-semibold text-red-800 mb-2">Xây dựng hệ thống chính trị:</p>
+                <div class="space-y-2 ml-4">
+                  <div class="flex items-start">
+                    <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3"></div>
+                    <p class="text-sm text-gray-700">
+                      Đảng Lãnh Đạo, Dựa Vào Dân
+                      <span class="text-xs text-gray-600 block mt-1">Đảng lãnh đạo, Nhà nước quản lý, Nhân dân làm chủ</span>
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3"></div>
+                    <p class="text-sm text-gray-700">
+                      Nhà nước hoạt động hiệu lực, hiệu quả
+                      <span class="text-xs text-gray-600 block mt-1">Cải cách hành chính, phục vụ nhân dân</span>
+                    </p>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3"></div>
+                    <p class="text-sm text-gray-700">
+                      Mặt trận Tổ quốc và các đoàn thể
+                      <span class="text-xs text-gray-600 block mt-1">Tập hợp, đoàn kết các tầng lớp nhân dân</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-blue-50 via-purple-50 to-red-50 border-2 border-blue-300 rounded-xl p-6 mt-8">
+          <h4 class="text-2xl font-bold text-gray-900 mb-4">Kết Luận</h4>
+          <p class="text-gray-800 leading-relaxed mb-4">
+            <strong>8 phương hướng</strong> này tạo thành một hệ thống hoàn chỉnh, bổ trợ lẫn nhau, 
+            chỉ ra con đường cụ thể để xây dựng chủ nghĩa xã hội ở Việt Nam.
+          </p>
+          <p class="text-gray-700 italic">
+            Thực hiện nhất quán và sáng tạo 8 phương hướng này sẽ đưa Việt Nam đến mục tiêu 
+            "Dân giàu, nước mạnh, dân chủ, công bằng, văn minh".
+          </p>
+        </div>
+      `
+    },
+
+    {
+      id: 6,
+      title: 'Mục Tiêu Phát Triển',
+      content: `
+        <div class="relative bg-white border-l-8 border-red-600 shadow-xl rounded-lg p-6 mb-8 hover:shadow-2xl transition-all">
+          <div class="absolute -left-6 top-4 bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold shadow-lg">
+            6
+          </div>
+          <h3 class="text-3xl font-bold text-gray-900 ml-8">Mục Tiêu Phát Triển <span class="text-red-600">Đến Năm 2045</span></h3>
+        </div>
+        
+        <div class="bg-gradient-to-br from-red-600 to-yellow-500 text-white p-6 rounded-xl mb-6 shadow-2xl">
+          <p class="text-sm opacity-90 mb-2">Theo Đại hội XIII (2021)</p>
+          <h4 class="text-2xl font-bold">Lộ Trình Phát Triển Việt Nam</h4>
+        </div>
+
+        <!-- Timeline Visualization -->
+        <div class="mb-8 bg-white p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold text-center mb-6 text-gray-800">Timeline Phát Triển (2021-2045)</h4>
+          <div class="relative">
+            <!-- Timeline Line -->
+            <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-red-500 via-blue-500 to-green-500"></div>
+            
+            <!-- 2021-2025 -->
+            <div class="relative mb-8 md:mb-12">
+              <div class="flex items-center justify-start md:justify-end md:w-1/2 md:pr-8">
+                <div class="bg-red-100 border-2 border-red-500 rounded-lg p-4 w-full md:w-auto shadow-md">
+                  <div class="flex items-center mb-2">
+                    <div class="bg-red-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-3">2025</div>
+                    <p class="font-bold text-red-700">Đổi Mới Toàn Diện</p>
+                  </div>
+                  <p class="text-sm text-gray-700">Hoàn thiện thể chế, chuyển đổi số</p>
+                </div>
+              </div>
+              <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-4 border-white" style="top: 20px;"></div>
+            </div>
+            
+            <!-- 2025-2030 -->
+            <div class="relative mb-8 md:mb-12">
+              <div class="flex items-center justify-start md:justify-start md:w-1/2 md:ml-auto md:pl-8">
+                <div class="bg-blue-100 border-2 border-blue-500 rounded-lg p-4 w-full md:w-auto shadow-md">
+                  <div class="flex items-center mb-2">
+                    <div class="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-3">2030</div>
+                    <p class="font-bold text-blue-700">Thu Nhập Trung Bình Cao</p>
+                  </div>
+                  <p class="text-sm text-gray-700">GDP: ~7.500 USD/người</p>
+                </div>
+              </div>
+              <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white" style="top: 20px;"></div>
+            </div>
+            
+            <!-- 2030-2045 -->
+            <div class="relative">
+              <div class="flex items-center justify-start md:justify-end md:w-1/2 md:pr-8">
+                <div class="bg-green-100 border-2 border-green-500 rounded-lg p-4 w-full md:w-auto shadow-md">
+                  <div class="flex items-center mb-2">
+                    <div class="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-3">2045</div>
+                    <p class="font-bold text-green-700">Nước Phát Triển</p>
+                  </div>
+                  <p class="text-sm text-gray-700">GDP: ~27.000-30.000 USD/người</p>
+                </div>
+              </div>
+              <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-green-500 rounded-full border-4 border-white" style="top: 20px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hình ảnh minh họa -->
+        <div class="grid md:grid-cols-3 gap-4 mb-6">
+          <div class="relative overflow-hidden rounded-lg shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80" 
+              alt="Thành phố Hồ Chí Minh hiện đại"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold text-sm">TP.HCM - Trung tâm kinh tế</p>
+            </div>
+          </div>
+          <div class="relative overflow-hidden rounded-lg shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80" 
+              alt="Cảng container Việt Nam"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold text-sm">Hệ thống cảng biển</p>
+            </div>
+          </div>
+          <div class="relative overflow-hidden rounded-lg shadow-lg group">
+            <img 
+              src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80" 
+              alt="Công nghiệp công nghệ cao"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold text-sm">Công nghiệp 4.0</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white border-l-4 border-red-500 p-6 rounded-r-xl shadow-lg">
+            <h4 class="text-xl font-bold text-red-700 mb-3">Giai đoạn 2021-2025</h4>
+            <p class="font-semibold text-gray-800 mb-3">Đẩy mạnh toàn diện, đồng bộ công cuộc đổi mới</p>
+            <ul class="space-y-2 ml-6 text-gray-700">
+              <li>Nâng cao chất lượng tăng trưởng</li>
+              <li>Cải thiện môi trường đầu tư kinh doanh</li>
+              <li>Đẩy mạnh chuyển đổi số quốc gia</li>
+              <li>Hoàn thiện thể chế kinh tế thị trường định hướng XHCN</li>
+            </ul>
+          </div>
+
+          <div class="bg-white border-l-4 border-blue-500 p-6 rounded-r-xl shadow-lg">
+            <h4 class="text-xl font-bold text-blue-700 mb-3">Giai đoạn 2025-2030</h4>
+            <p class="font-semibold text-gray-800 mb-3">Phấn đấu trở thành nước đang phát triển có công nghiệp hiện đại, thu nhập trung bình cao</p>
+            <ul class="space-y-2 ml-6 text-gray-700">
+              <li>GDP bình quân đầu người đạt khoảng 7.500 USD</li>
+              <li>Công nghiệp, dịch vụ chiếm tỷ trọng cao</li>
+              <li>Kinh tế số phát triển mạnh</li>
+              <li>Hội nhập quốc tế sâu rộng</li>
+            </ul>
+          </div>
+
+          <div class="bg-white border-l-4 border-green-500 p-6 rounded-r-xl shadow-lg">
+            <h4 class="text-xl font-bold text-green-700 mb-3">Giai đoạn 2030-2045</h4>
+            <p class="font-semibold text-gray-800 mb-3">Trở thành nước phát triển, thu nhập cao</p>
+            <div class="grid md:grid-cols-2 gap-4 mt-4">
+              <div class="bg-green-50 p-4 rounded-lg">
+                <p class="font-bold text-green-800 mb-2">Năm 2030</p>
+                <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                  <li>Nước đang phát triển, thu nhập trung bình cao</li>
+                  <li>Công nghiệp hiện đại</li>
+                  <li>GDP bình quân đầu người: ~7.500 USD</li>
+                </ul>
+              </div>
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <p class="font-bold text-blue-800 mb-2">Năm 2045 (100 năm thành lập nước)</p>
+                <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                  <li>Nước phát triển, thu nhập cao</li>
+                  <li>Văn minh, hiện đại</li>
+                  <li>GDP bình quân đầu người: ~27.000-30.000 USD</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-400 rounded-xl p-6">
+          <h4 class="text-2xl font-bold text-gray-900 mb-4">Bài Học Lịch Sử</h4>
+          <div class="space-y-3 text-gray-800">
+            <p class="leading-relaxed">
+              Để đạt được mục tiêu này, Việt Nam cần:
+            </p>
+            <ul class="ml-6 space-y-2">
+              <li>Kiên định mục tiêu độc lập dân tộc và chủ nghĩa xã hội</li>
+              <li>Đổi mới mạnh mẽ tư duy, phương thức lãnh đạo của Đảng</li>
+              <li>Phát huy sức mạnh đại đoàn kết toàn dân tộc</li>
+              <li>Xây dựng nền kinh tế độc lập, tự chủ gắn với hội nhập quốc tế</li>
+              <li>Đầu tư mạnh cho giáo dục, đào tạo, khoa học công nghệ</li>
+            </ul>
+          </div>
+        </div>
+      `
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <div className="container mx-auto px-4 py-12">
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent">
+            Học Tập & Khám Phá
+          </h1>
+          <p className="text-xl text-gray-600">
+            Tìm hiểu về con đường đi lên Chủ Nghĩa Xã Hội của Việt Nam
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-4 gap-8">
+          <div className="lg:col-span-1">
+            <div className="bg-white rounded-lg shadow-lg p-6 sticky top-6">
+              <h2 className="text-2xl font-bold mb-6 text-blue-600">Nội Dung</h2>
+              
+              <nav className="space-y-3">
+                {sections.map((section, index) => (
+                  <button
+                    key={section.id}
+                    onClick={() => setActiveSection(index)}
+                    className={`w-full text-left px-6 py-4 rounded-lg font-semibold text-lg transition-all duration-300 ${
+                      activeSection === index
+                        ? 'bg-blue-600 text-white shadow-lg transform scale-105'
+                        : 'bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700'
+                    }`}
+                  >
+                    {index + 1}. {section.title}
+                  </button>
+                ))}
+              </nav>
+              
+              <div className="mt-8">
+                <p className="text-sm text-gray-600 mb-2">
+                  Tiến Độ: {activeSection + 1}/{sections.length}
+                </p>
+                <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div 
+                    className="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full transition-all duration-500"
+                    style={{ width: `${((activeSection + 1) / sections.length) * 100}%` }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-3">
+            <div className="bg-white rounded-lg shadow-lg p-10 animate-slide-up">
+              <h2 className="text-4xl font-bold text-blue-600 mb-8">
+                {sections[activeSection].title}
+              </h2>
+              
+              <div 
+                className="prose prose-lg max-w-none learn-page"
+                dangerouslySetInnerHTML={{ __html: sections[activeSection].content }}
+              />
+
+              <div className="flex justify-between mt-10 pt-8 border-t-2 border-gray-200">
+                <button
+                  onClick={() => setActiveSection(Math.max(0, activeSection - 1))}
+                  disabled={activeSection === 0}
+                  className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 ${
+                    activeSection === 0
+                      ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                      : 'bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 shadow-lg'
+                  }`}
+                >
+                  ← Trước
+                </button>
+                <button
+                  onClick={() => setActiveSection(Math.min(sections.length - 1, activeSection + 1))}
+                  disabled={activeSection === sections.length - 1}
+                  className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 ${
+                    activeSection === sections.length - 1
+                      ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                      : 'bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 shadow-lg'
+                  }`}
+                >
+                  Sau →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Learn;

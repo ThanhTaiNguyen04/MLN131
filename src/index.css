@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* ============================================
+   PRESENTATION MODE - Optimized for Display
+   Bảng màu đơn giản cho thuyết trình
+   ============================================ */
+
+/* Bảng màu chính - Dựa trên cờ Việt Nam */
+:root {
+  --vn-red: #DC2626;      /* Đỏ quốc kỳ */
+  --vn-blue: #2563EB;     /* Xanh dương chuyên nghiệp */
+  --vn-amber: #F59E0B;    /* Vàng sao vàng */
+  --vn-gray: #374151;     /* Xám đậm cho text */
+  --vn-light: #F9FAFB;    /* Xám nhạt cho nền */
+}
+
+/* Tối ưu font size cho thuyết trình */
+.learn-page h3 {
+  font-size: 2rem !important;
+  line-height: 2.5rem !important;
+  color: var(--vn-red) !important;
+  margin-bottom: 2rem !important;
+}
+
+.learn-page h4 {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.learn-page h5 {
+  font-size: 1.25rem !important;
+  line-height: 1.75rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.learn-page p, .learn-page li {
+  font-size: 1.125rem !important;
+  line-height: 1.875rem !important;
+}
+
+/* Đơn giản hóa màu sắc - Chỉ giữ 3 màu chính */
+/* Chuyển tất cả Purple, Pink, Teal, Indigo, Cyan, Green sang Blue */
+.learn-page .text-purple-700,
+.learn-page .text-purple-800,
+.learn-page .text-purple-900,
+.learn-page .text-pink-700,
+.learn-page .text-pink-800,
+.learn-page .text-pink-900,
+.learn-page .text-teal-700,
+.learn-page .text-teal-800,
+.learn-page .text-teal-900,
+.learn-page .text-indigo-700,
+.learn-page .text-indigo-800,
+.learn-page .text-indigo-900,
+.learn-page .text-cyan-700,
+.learn-page .text-cyan-800,
+.learn-page .text-cyan-900,
+.learn-page .text-green-700,
+.learn-page .text-green-800,
+.learn-page .text-green-900 {
+  color: var(--vn-blue) !important;
+}
+
+/* Chuyển Orange sang Amber */
+.learn-page .text-orange-700,
+.learn-page .text-orange-800,
+.learn-page .text-orange-900 {
+  color: var(--vn-amber) !important;
+}
+
+/* Borders - Đơn giản hóa */
+.learn-page .border-purple-200,
+.learn-page .border-purple-300,
+.learn-page .border-pink-200,
+.learn-page .border-pink-300,
+.learn-page .border-teal-200,
+.learn-page .border-teal-300,
+.learn-page .border-indigo-200,
+.learn-page .border-indigo-300,
+.learn-page .border-cyan-200,
+.learn-page .border-cyan-300,
+.learn-page .border-green-200,
+.learn-page .border-green-300 {
+  border-color: #BFDBFE !important; /* blue-200 */
+}
+
+.learn-page .border-purple-400,
+.learn-page .border-purple-500,
+.learn-page .border-pink-400,
+.learn-page .border-pink-500,
+.learn-page .border-teal-400,
+.learn-page .border-teal-500,
+.learn-page .border-indigo-400,
+.learn-page .border-indigo-500,
+.learn-page .border-cyan-400,
+.learn-page .border-cyan-500,
+.learn-page .border-green-400,
+.learn-page .border-green-500 {
+  border-color: #60A5FA !important; /* blue-400 */
+}
+
+.learn-page .border-orange-200,
+.learn-page .border-orange-300 {
+  border-color: #FDE68A !important; /* amber-200 */
+}
+
+.learn-page .border-orange-400,
+.learn-page .border-orange-500 {
+  border-color: #FCD34D !important; /* amber-300 */
+}
+
+/* Backgrounds - Đơn giản hóa */
+.learn-page .bg-purple-50,
+.learn-page .bg-pink-50,
+.learn-page .bg-teal-50,
+.learn-page .bg-indigo-50,
+.learn-page .bg-cyan-50,
+.learn-page .bg-green-50 {
+  background-color: #EFF6FF !important; /* blue-50 */
+}
+
+.learn-page .bg-purple-100,
+.learn-page .bg-pink-100,
+.learn-page .bg-teal-100,
+.learn-page .bg-indigo-100,
+.learn-page .bg-cyan-100,
+.learn-page .bg-green-100 {
+  background-color: #DBEAFE !important; /* blue-100 */
+}
+
+.learn-page .bg-orange-50 {
+  background-color: #FFFBEB !important; /* amber-50 */
+}
+
+.learn-page .bg-orange-100 {
+  background-color: #FEF3C7 !important; /* amber-100 */
+}
+
+/* Gradients - Đơn giản hóa */
+.learn-page .from-purple-50,
+.learn-page .from-pink-50,
+.learn-page .from-teal-50,
+.learn-page .from-indigo-50,
+.learn-page .from-cyan-50,
+.learn-page .from-green-50 {
+  --tw-gradient-from: #EFF6FF !important;
+  --tw-gradient-to: rgb(239 246 255 / 0) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+.learn-page .to-purple-50,
+.learn-page .to-pink-50,
+.learn-page .to-teal-50,
+.learn-page .to-indigo-50,
+.learn-page .to-cyan-50,
+.learn-page .to-green-50 {
+  --tw-gradient-to: #EFF6FF !important;
+}
+
+.learn-page .from-orange-50,
+.learn-page .from-yellow-50 {
+  --tw-gradient-from: #FFFBEB !important;
+  --tw-gradient-to: rgb(255 251 235 / 0) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+.learn-page .to-orange-50,
+.learn-page .to-yellow-50 {
+  --tw-gradient-to: #FFFBEB !important;
+}
+
+/* Loại bỏ gradient phức tạp - chuyển thành solid */
+.learn-page .bg-gradient-to-r,
+.learn-page .bg-gradient-to-br,
+.learn-page .bg-gradient-to-b {
+  background-image: none !important;
+}
+
+/* Tăng khoảng trắng cho dễ đọc */
+.learn-page > div {
+  padding: 2rem !important;
+}
+
+.learn-page .space-y-4 > * + * {
+  margin-top: 2rem !important;
+}
+
+.learn-page .space-y-6 > * + * {
+  margin-top: 2.5rem !important;
+}
+
+/* Shadow đơn giản hơn */
+.learn-page .shadow-lg,
+.learn-page .shadow-xl,
+.learn-page .shadow-2xl {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+}
+
+/* Hover effects đơn giản */
+.learn-page .hover\:shadow-xl:hover,
+.learn-page .hover\:shadow-lg:hover {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+}
+
+/* Border radius thống nhất */
+.learn-page .rounded-xl {
+  border-radius: 1rem !important;
+}
+
+.learn-page .rounded-lg {
+  border-radius: 0.75rem !important;
+}
+
+/* Icons size tăng lên */
+.learn-page .text-3xl {
+  font-size: 2rem !important;
+}
+
+.learn-page .text-4xl {
+  font-size: 2.5rem !important;
+}
