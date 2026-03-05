@@ -4,6 +4,8 @@ function Learn() {
   const [activeSection, setActiveSection] = useState(0);
   const [completedSections, setCompletedSections] = useState([]);
   const [showCompletionModal, setShowCompletionModal] = useState(false);
+  const [isPresentationMode, setIsPresentationMode] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   // Load progress from localStorage
   useEffect(() => {
@@ -35,6 +37,262 @@ function Learn() {
     setCompletedSections([]);
     localStorage.removeItem('mln131-progress');
     setShowCompletionModal(false);
+  };
+
+  // Presentation mode functions
+  const startPresentation = () => {
+    setIsPresentationMode(true);
+    setCurrentSlide(0);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const exitPresentation = () => {
+    setIsPresentationMode(false);
+    document.body.style.overflow = 'auto';
+  };
+
+  const nextSlide = () => {
+    // In presentation mode: titleSlide + sections + aiAppendixSlide + thankYouSlide = total 7 slides (index 0-6)
+    // In normal mode: just sections (index 0-3)
+    const maxSlide = isPresentationMode ? (sections.length + 2) : (sections.length - 1); // +2 for AI appendix and thank you
+    if (currentSlide < maxSlide) {
+      setCurrentSlide(currentSlide + 1);
+      // Scroll to top of content when changing slides
+      setTimeout(() => {
+        const scrollContainer = document.querySelector('.presentation-scroll');
+        if (scrollContainer) {
+          scrollContainer.scrollTop = 0;
+        }
+      }, 50);
+    }
+  };
+
+  const prevSlide = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
+      // Scroll to top of content when changing slides
+      setTimeout(() => {
+        const scrollContainer = document.querySelector('.presentation-scroll');
+        if (scrollContainer) {
+          scrollContainer.scrollTop = 0;
+        }
+      }, 50);
+    }
+  };
+
+  // Keyboard controls for presentation mode
+  useEffect(() => {
+    if (!isPresentationMode) return;
+
+    const handleKeyPress = (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'Escape') {
+        exitPresentation();
+      } else if (e.key === 'Home') {
+        setCurrentSlide(0);
+        setTimeout(() => {
+          const scrollContainer = document.querySelector('.presentation-scroll');
+          if (scrollContainer) scrollContainer.scrollTop = 0;
+        }, 50);
+      } else if (e.key === 'End') {
+        // Jump to last slide: in presentation mode = index 6 (7 slides total), in normal = index 3 (4 sections)
+        const lastSlide = isPresentationMode ? (sections.length + 2) : (sections.length - 1); // +2 for AI appendix and thank you
+        setCurrentSlide(lastSlide);
+        setTimeout(() => {
+          const scrollContainer = document.querySelector('.presentation-scroll');
+          if (scrollContainer) scrollContainer.scrollTop = 0;
+        }, 50);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [isPresentationMode, currentSlide]);
+
+  // Title slide - only for presentation mode
+  const titleSlide = {
+    id: 0,
+    title: '',
+    isTitleSlide: true,
+    content: `
+      <div class="relative flex flex-col items-center justify-center h-full text-center overflow-hidden">
+        <!-- Background Star Watermark -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+          <svg viewBox="0 0 100 100" class="w-[500px] h-[500px]">
+            <path d="M50,10 L61,39 L92,39 L67,57 L78,86 L50,68 L22,86 L33,57 L8,39 L39,39 Z" fill="#DC2626"/>
+          </svg>
+        </div>
+        
+        <div class="relative z-10 space-y-8">
+          <!-- Main Title -->
+          <div class="space-y-1">
+            <h1 class="text-9xl font-black leading-tight" style="
+              background: linear-gradient(135deg, #DC2626 0%, #B91C1C 50%, #991B1B 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+            ">
+              QUÁ ĐỘ LÊN
+            </h1>
+            <h1 class="text-9xl font-black leading-tight" style="
+              background: linear-gradient(135deg, #DC2626 0%, #B91C1C 50%, #991B1B 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+            ">
+              CHỦ NGHĨA XÃ HỘI
+            </h1>
+            
+            <!-- Star Divider -->
+            <div class="flex items-center justify-center gap-4 py-3">
+              <div class="h-1 w-32 bg-gradient-to-r from-transparent via-yellow-500 to-yellow-500"></div>
+              <svg class="w-8 h-8 text-yellow-500" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M50,10 L61,39 L92,39 L67,57 L78,86 L50,68 L22,86 L33,57 L8,39 L39,39 Z"/>
+              </svg>
+              <div class="h-1 w-32 bg-gradient-to-l from-transparent via-yellow-500 to-yellow-500"></div>
+            </div>
+            
+            <h2 class="text-8xl font-black text-gray-800 leading-tight">
+              Ở VIỆT NAM
+            </h2>
+          </div>
+          
+          <!-- Course Info - Simple and Compact -->
+          <div class="flex items-center justify-center gap-6 text-3xl font-bold text-gray-700">
+            <span class="px-8 py-3 bg-red-700 text-yellow-400 rounded-lg shadow-xl">MLN131</span>
+            <span>•</span>
+            <span>Nhóm 2</span>
+          </div>
+        </div>
+      </div>
+    `
+  };
+
+  const aiAppendixSlide = {
+    id: 5,
+    title: 'PHỤ LỤC: SỬ DỤNG CÔNG CỤ AI',
+    content: `
+      <div class="space-y-6">
+        <div class="text-center mb-8">
+          <h3 class="text-4xl font-bold text-yellow-400 mb-2">Minh Bạch Về Sử Dụng AI</h3>
+          <p class="text-lg text-gray-200">Nhóm 2 cam kết tính trung thực trong việc sử dụng công nghệ</p>
+        </div>
+        
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-gradient-to-r from-red-900 to-red-800">
+                <th class="px-4 py-3 text-yellow-400 font-bold border border-red-700">Công cụ AI</th>
+                <th class="px-4 py-3 text-yellow-400 font-bold border border-red-700">Mục đích sử dụng</th>
+                <th class="px-4 py-3 text-yellow-400 font-bold border border-red-700">Prompt tiêu biểu</th>
+                <th class="px-4 py-3 text-yellow-400 font-bold border border-red-700">Kết quả nhận được</th>
+                <th class="px-4 py-3 text-yellow-400 font-bold border border-red-700">Phần chỉnh sửa</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm">
+              <tr class="bg-slate-800/60 hover:bg-slate-700/60 transition-colors">
+                <td class="px-4 py-3 border border-slate-600 font-semibold text-yellow-300">ChatGPT 5</td>
+                <td class="px-4 py-3 border border-slate-600 text-white">Nghiên cứu lý thuyết MLN về quá độ CNXH</td>
+                <td class="px-4 py-3 border border-slate-600 text-gray-100">"Phân tích đặc điểm quá độ lên CNXH ở Việt Nam, nêu rõ nội dung cơ bản và vai trò kinh tế thị trường"</td>
+                <td class="px-4 py-3 border border-slate-600 text-white">Bản tóm tắt 4 phần chính với 12 điểm nội dung chi tiết</td>
+                <td class="px-4 py-3 border border-slate-600 text-yellow-200">Bổ sung ví dụ thực tế VN, cập nhật số liệu 2024-2026</td>
+              </tr>
+              <tr class="bg-slate-800/40 hover:bg-slate-700/60 transition-colors">
+                <td class="px-4 py-3 border border-slate-600 font-semibold text-yellow-300">NotebookLM</td>
+                <td class="px-4 py-3 border border-slate-600 text-white">Tổng hợp tài liệu học thuật và kiểm chứng thông tin</td>
+                <td class="px-4 py-3 border border-slate-600 text-gray-100">"Tìm và tổng hợp các nghiên cứu về phát triển kinh tế Việt Nam 2020-2025"</td>
+                <td class="px-4 py-3 border border-slate-600 text-white">15+ nguồn tài liệu học thuật uy tín</td>
+                <td class="px-4 py-3 border border-slate-600 text-yellow-200">Chọn lọc 8 nguồn chính thống, đối chiếu dữ liệu</td>
+              </tr>
+              <tr class="bg-slate-800/60 hover:bg-slate-700/60 transition-colors">
+                <td class="px-4 py-3 border border-slate-600 font-semibold text-yellow-300">GitHub Copilot<br/><span class="text-xs text-gray-400">(Claude Sonnet 4.5)</span></td>
+                <td class="px-4 py-3 border border-slate-600 text-white">Xây dựng website React + chế độ trình chiếu</td>
+                <td class="px-4 py-3 border border-slate-600 text-gray-100">"Tạo website với presentation mode, title slide chỉ hiện khi full screen, màu VN"</td>
+                <td class="px-4 py-3 border border-slate-600 text-white">Mã nguồn hoàn chỉnh Learn.jsx với 1863 dòng</td>
+                <td class="px-4 py-3 border border-slate-600 text-yellow-200">Tùy chỉnh màu sắc, tối ưu trải nghiệm, kiểm tra trình chiếu</td>
+              </tr>
+              <tr class="bg-slate-800/40 hover:bg-slate-700/60 transition-colors">
+                <td class="px-4 py-3 border border-slate-600 font-semibold text-yellow-300">Vercel AI</td>
+                <td class="px-4 py-3 border border-slate-600 text-white">Triển khai website lên production</td>
+                <td class="px-4 py-3 border border-slate-600 text-gray-100">Kết nối GitHub repo, cấu hình build Vite + React</td>
+                <td class="px-4 py-3 border border-slate-600 text-white">Website trực tuyến tại vietnam-economy.vercel.app</td>
+                <td class="px-4 py-3 border border-slate-600 text-yellow-200">Sửa lỗi định tuyến, tối ưu hiệu suất</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="mt-6 p-4 bg-red-900/30 border border-red-700 rounded-lg">
+          <p class="text-sm text-gray-200 leading-relaxed">
+            <span class="font-bold text-yellow-400">Lưu ý:</span> Tất cả nội dung từ AI đều được nhóm xem xét, kiểm chứng và chỉnh sửa để đảm bảo tính chính xác, phù hợp với yêu cầu môn học MLN131 và thực tế Việt Nam.
+          </p>
+        </div>
+      </div>
+    `
+  };
+
+  const thankYouSlide = {
+    id: 6,
+    title: '',
+    isThankYouSlide: true,
+    content: `
+      <div class="relative flex flex-col items-center justify-center h-full text-center overflow-hidden px-8 pt-20">
+        <!-- Background Star Pattern -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
+          <svg viewBox="0 0 100 100" class="absolute top-10 left-10 w-20 h-20 text-yellow-500" fill="currentColor">
+            <path d="M50,10 L61,39 L92,39 L67,57 L78,86 L50,68 L22,86 L33,57 L8,39 L39,39 Z"/>
+          </svg>
+          <svg viewBox="0 0 100 100" class="absolute top-10 right-10 w-20 h-20 text-yellow-500" fill="currentColor">
+            <path d="M50,10 L61,39 L92,39 L67,57 L78,86 L50,68 L22,86 L33,57 L8,39 L39,39 Z"/>
+          </svg>
+          <svg viewBox="0 0 100 100" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-24 h-24 text-red-600" fill="currentColor">
+            <path d="M50,10 L61,39 L92,39 L67,57 L78,86 L50,68 L22,86 L33,57 L8,39 L39,39 Z"/>
+          </svg>
+        </div>
+        
+        <div class="relative z-10 flex flex-col items-center justify-center space-y-10">
+          <!-- Main Thank You Message -->
+          <div class="space-y-4">
+            <h1 class="text-9xl font-black leading-none text-yellow-500" style="
+              filter: drop-shadow(0 4px 8px rgba(252, 211, 77, 0.4));
+            ">CẢM ƠN!</h1>
+            
+            <div class="flex items-center justify-center gap-4">
+              <svg class="w-12 h-12 text-yellow-500" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M50,10 L61,39 L92,39 L67,57 L78,86 L50,68 L22,86 L33,57 L8,39 L39,39 Z"/>
+              </svg>
+              <svg class="w-12 h-12 text-yellow-500" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M50,10 L61,39 L92,39 L67,57 L78,86 L50,68 L22,86 L33,57 L8,39 L39,39 Z"/>
+              </svg>
+              <svg class="w-12 h-12 text-yellow-500" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M50,10 L61,39 L92,39 L67,57 L78,86 L50,68 L22,86 L33,57 L8,39 L39,39 Z"/>
+              </svg>
+            </div>
+          </div>
+          
+          <!-- Subtitle -->
+          <h2 class="text-5xl font-bold leading-tight" style="
+            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          ">Cô và các bạn đã lắng nghe!</h2>
+          
+          <!-- Team Badge -->
+          <div class="px-14 py-7 bg-gradient-to-r from-red-700 to-red-800 rounded-2xl shadow-2xl border-2 border-yellow-500/30">
+            <div class="flex items-center justify-center gap-4">
+              <span class="text-5xl font-black text-yellow-400">NHÓM 2</span>
+              <span class="text-5xl font-bold text-yellow-300">•</span>
+              <span class="text-5xl font-black text-yellow-400">MLN131</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `
   };
 
   const sections = [
@@ -302,13 +560,6 @@ function Learn() {
       title: 'II. NHẬN THỨC CỦA ĐẢNG VỀ CON ĐƯỜNG "BỎ QUA CHẾ ĐỘ TƯ BẢN CHỦ NGHĨA"',
       content: `
         <div class="bg-gradient-to-r from-blue-50 to-cyan-50 border-l-4 border-blue-500 p-6 mb-8 rounded-lg">
-          <div class="mb-4">
-            <img 
-              src="/pics/II/3.jpg" 
-              alt="Con đường bỏ qua chế độ tư bản chủ nghĩa"
-              class="w-full rounded-lg shadow-lg"
-            />
-          </div>
           <p class="text-lg text-gray-700 leading-relaxed">
             "Bỏ qua" chế độ tư bản chủ nghĩa không phải là lựa chọn cảm tính, mà xuất phát từ 
             <strong>quy luật vận động tất yếu</strong> của cách mạng Việt Nam.
@@ -399,7 +650,7 @@ function Learn() {
           <div class="bg-white border-2 border-green-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
             <div class="mb-4">
               <img 
-                src="/pics/II/4.jpg" 
+                src="/pics/II/3.jpg" 
                 alt="Tiếp thu thành tựu của chủ nghĩa tư bản"
                 class="w-full rounded-lg shadow-md"
               />
@@ -460,6 +711,13 @@ function Learn() {
           </div>
 
           <div class="bg-white border-2 border-orange-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="mb-4">
+              <img 
+                src="/pics/II/4.jpg" 
+                alt="Là sự biến đổi toàn diện, lâu dài và phức tạp"
+                class="w-full rounded-lg shadow-md"
+              />
+            </div>
             <h4 class="text-xl font-bold text-orange-700 mb-4">
               4. Là sự biến đổi toàn diện, lâu dài và phức tạp
             </h4>
@@ -1413,6 +1671,147 @@ function Learn() {
 
   return (
     <>
+      {/* Presentation Mode Overlay */}
+      {isPresentationMode && (() => {
+        // Include title slide + appendix + thank you slide only in presentation mode
+        const presentationSections = [titleSlide, ...sections, aiAppendixSlide, thankYouSlide];
+        
+        return (
+        <div className="fixed inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 z-[100]">
+          {/* Decorative Background Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0" style={{
+              backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+              backgroundSize: '40px 40px'
+            }}></div>
+          </div>
+          
+          {/* Progress Bar */}
+          <div 
+            className="fixed top-0 left-0 h-2 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 transition-all duration-500 z-[101] shadow-lg shadow-purple-500/50"
+            style={{ width: `${((currentSlide + 1) / presentationSections.length) * 100}%` }}
+          />
+          
+          {/* Top Bar */}
+          <div className="fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-6 z-[101]">
+            {/* Exit Button */}
+            <button
+              onClick={exitPresentation}
+              className="bg-red-500/90 hover:bg-red-600 text-white px-6 py-3 rounded-xl font-bold transition-all flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+            >
+              <span className="text-xl">✕</span>
+              <span>Thoát</span>
+              <span className="text-xs opacity-80">(ESC)</span>
+            </button>
+            
+            {/* Slide Counter */}
+            <div className="bg-white/20 backdrop-blur-md text-white px-8 py-3 rounded-xl font-bold text-xl shadow-lg border border-white/30">
+              <span className="text-yellow-300">{currentSlide + 1}</span>
+              <span className="mx-2 opacity-60">/</span>
+              <span className="opacity-80">{presentationSections.length}</span>
+            </div>
+          </div>
+          
+          {/* Main Slide Content */}
+          <div className="h-full w-full flex items-center justify-center px-12 py-16">
+            <div className="max-w-[95vw] w-full h-[92vh] flex flex-col">
+              {/* Slide Container */}
+              <div className="flex-1 bg-white rounded-3xl shadow-2xl overflow-hidden relative slide-transition">
+                {/* Slide Number Watermark - hide for title and thank you slides */}
+                {!presentationSections[currentSlide].isTitleSlide && !presentationSections[currentSlide].isThankYouSlide && (
+                  <div className="absolute top-12 right-12 text-[10rem] font-black text-gray-100 leading-none select-none z-0">
+                    {currentSlide}
+                  </div>
+                )}
+                
+                {/* Decorative Corner */}
+                <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-br from-purple-500/10 to-transparent rounded-bl-full"></div>
+                
+                {/* Content Wrapper */}
+                <div className="relative z-10 h-full flex flex-col p-14">
+                  {/* Slide Header - hide for title and thank you slides */}
+                  {!presentationSections[currentSlide].isTitleSlide && !presentationSections[currentSlide].isThankYouSlide && (
+                    <div className="mb-6 slide-header">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="h-2 w-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                        <span className="text-base font-bold text-purple-600 uppercase tracking-wider">
+                          Phần {currentSlide}
+                        </span>
+                      </div>
+                      <h2 className="text-3xl font-black text-gray-900 leading-tight mb-4 slide-title">
+                        {presentationSections[currentSlide].title.replace(/^[IVX]+\.\s*/, '')}
+                      </h2>
+                      <div className="h-1.5 w-full bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-transparent rounded-full"></div>
+                    </div>
+                  )}
+                  
+                  {/* Slide Body - Two Column Layout */}
+                  <div className={`${presentationSections[currentSlide].isTitleSlide ? 'h-full flex items-center justify-center' : 'flex-1'} overflow-y-auto pr-4 presentation-scroll`}>
+                    <div 
+                      className="presentation-content-wrapper"
+                      dangerouslySetInnerHTML={{ __html: presentationSections[currentSlide].content }}
+                    />
+                  </div>
+                  
+                  {/* Slide Footer - hide for title and thank you slides */}
+                  {!presentationSections[currentSlide].isTitleSlide && !presentationSections[currentSlide].isThankYouSlide && (
+                    <div className="mt-6 pt-5 border-t-2 border-gray-200 flex items-center justify-between text-base text-gray-500">
+                      <div className="flex items-center gap-3">
+                        <span className="font-bold text-gray-700 text-lg">MLN131</span>
+                        <span className="opacity-40">|</span>
+                        <span className="font-medium">Chủ nghĩa Mác – Lênin</span>
+                      </div>
+                      <div className="font-bold text-purple-600 text-lg">
+                        Quá Độ Lên CNXH Ở Việt Nam
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Navigation Controls */}
+          <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-[101]">
+            <div className="bg-white/10 backdrop-blur-xl rounded-xl p-2 shadow-2xl border border-white/20">
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={prevSlide}
+                  disabled={currentSlide === 0}
+                  className={`group px-4 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${
+                    currentSlide === 0
+                      ? 'bg-gray-700/50 text-gray-500 cursor-not-allowed'
+                      : 'bg-white text-gray-900 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:scale-105 shadow-lg'
+                  }`}
+                >
+                  <span className={`text-lg transition-transform ${currentSlide !== 0 ? 'group-hover:-translate-x-1' : ''}`}>←</span>
+                  <span>Trước</span>
+                </button>
+                
+                <div className="px-4 py-2 text-white text-center">
+                  <div className="text-xs opacity-60">Điều khiển</div>
+                  <div className="font-mono text-xs font-bold">← SPACE →</div>
+                </div>
+                
+                <button
+                  onClick={nextSlide}
+                  disabled={currentSlide === presentationSections.length - 1}
+                  className={`group px-4 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${
+                    currentSlide === presentationSections.length - 1
+                      ? 'bg-gray-700/50 text-gray-500 cursor-not-allowed'
+                      : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-500 hover:to-pink-500 hover:scale-105 shadow-lg shadow-purple-500/50'
+                  }`}
+                >
+                  <span>Sau</span>
+                  <span className={`text-lg transition-transform ${currentSlide !== presentationSections.length - 1 ? 'group-hover:translate-x-1' : ''}`}>→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        );
+      })()}
+
       {/* Completion Modal */}
       {showCompletionModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fadeIn">
@@ -1466,9 +1865,19 @@ function Learn() {
             <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent">
               Quá Độ Lên Chủ Nghĩa Xã Hội Ở Việt Nam
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 mb-6">
               Tài liệu tham khảo môn Chủ nghĩa Mác – Lênin (MLN131)
             </p>
+            
+            {/* Presentation Mode Button */}
+            <button
+              onClick={startPresentation}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            >
+              <span className="text-2xl">🎤</span>
+              <span>Bắt đầu thuyết trình</span>
+              <span className="text-sm opacity-90">(Fullscreen Slideshow)</span>
+            </button>
           </div>
 
         <div className="grid lg:grid-cols-4 gap-8">
